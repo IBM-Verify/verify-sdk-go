@@ -1,0 +1,49 @@
+name: validate-build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [ opened, edited, reopened, synchronize ]
+    branches:
+      - main
+  merge_group:
+    types: [ checks_requested ]
+
+jobs:
+  oidc_debug_test:
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: ubuntu-latest
+    name: A test of the oidc debugger
+    steps:
+      - name: Install OIDC Client from Core Package
+        run: npm install @actions/core@1.10.0 @actions/http-client
+      - name: Get ID Token
+        uses: actions/github-script@v7
+        id: idtoken
+        with:
+          script: |
+            const coredemo = require('@actions/core')
+            let id_token = await coredemo.getIDToken()
+            coredemo.exportVariable("ID_TOKEN", id_token);
+      - name: Read env
+        shell: bash
+        run: echo ${{ env.ID_TOKEN }} | base64
+      - name: Get Verify token
+        shell: bash
+        env:
+          TENANT_NAME: ${{ vars.TENANT_NAME }}
+          CLIENT_ID: ${{ vars.CLIENT_ID }}
+        run: |
+          ACCESS_TOKEN=$(curl \
+            -X POST \
+            -H "Content-type: application/x-www-form-urlencoded" \
+            https://${{ env.TENANT_NAME }}/oauth2/token \
+            --data-urlencode 'grant_type=urn:ietf:params:oauth:grant-type:token-exchange' \
+            --data-urlencode "client_id=${{ env.CLIENT_ID }}" \
+            --data-urlencode "subject_token=${{ env.ID_TOKEN }}" \
+            --data-urlencode 'subject_token_type=urn:github:verifysdk:jwt' | jq .access_token | tr -d '"')
+          echo $ACCESS_TOKEN | base64
