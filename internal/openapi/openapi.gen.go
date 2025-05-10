@@ -22,6 +22,12 @@ const (
 	BasicAuthScopes = "BasicAuth.Scopes"
 )
 
+// Defines values for APIAccessClientBeanAccessTokenType.
+const (
+	APIAccessClientBeanAccessTokenTypeDefault APIAccessClientBeanAccessTokenType = "default"
+	APIAccessClientBeanAccessTokenTypeJwt     APIAccessClientBeanAccessTokenType = "jwt"
+)
+
 // Defines values for APIClientConfigIPFilterOp.
 const (
 	APIClientConfigIPFilterOpAllow APIClientConfigIPFilterOp = "allow"
@@ -32,6 +38,20 @@ const (
 const (
 	APIClientConfigRequestIPFilterOpAllow APIClientConfigRequestIPFilterOp = "allow"
 	APIClientConfigRequestIPFilterOpDeny  APIClientConfigRequestIPFilterOp = "deny"
+)
+
+// Defines values for AccessPolicyResult0Action.
+const (
+	AccessPolicyResult0ActionACTIONALLOW           AccessPolicyResult0Action = "ACTION_ALLOW"
+	AccessPolicyResult0ActionACTIONALLOWOVERRIDE   AccessPolicyResult0Action = "ACTION_ALLOW_OVERRIDE"
+	AccessPolicyResult0ActionACTIONCONTINUE        AccessPolicyResult0Action = "ACTION_CONTINUE"
+	AccessPolicyResult0ActionACTIONDENY            AccessPolicyResult0Action = "ACTION_DENY"
+	AccessPolicyResult0ActionACTIONDENYANDREDIRECT AccessPolicyResult0Action = "ACTION_DENY_AND_REDIRECT"
+	AccessPolicyResult0ActionACTIONDENYOVERRIDE    AccessPolicyResult0Action = "ACTION_DENY_OVERRIDE"
+	AccessPolicyResult0ActionACTIONMFAALWAYS       AccessPolicyResult0Action = "ACTION_MFA_ALWAYS"
+	AccessPolicyResult0ActionACTIONMFAOVERRIDE     AccessPolicyResult0Action = "ACTION_MFA_OVERRIDE"
+	AccessPolicyResult0ActionACTIONMFAPERSESSION   AccessPolicyResult0Action = "ACTION_MFA_PER_SESSION"
+	AccessPolicyResult0ActionACTIONREDIRECT        AccessPolicyResult0Action = "ACTION_REDIRECT"
 )
 
 // Defines values for AddressType.
@@ -69,6 +89,11 @@ const (
 	Attribute0SourceTypeProfile    Attribute0SourceType = "profile"
 	Attribute0SourceTypeSchema     Attribute0SourceType = "schema"
 	Attribute0SourceTypeStatic     Attribute0SourceType = "static"
+)
+
+// Defines values for AuthenticationPolicyBeanName.
+const (
+	AuthenticationPolicyBeanNameApplicableOnlyForGETEndpointCalls AuthenticationPolicyBeanName = "Applicable only for GET endpoint calls."
 )
 
 // Defines values for BulkResultOp.
@@ -168,6 +193,54 @@ const (
 	EmailAddressTypeWork EmailAddressType = "work"
 )
 
+// Defines values for GrantTypesBeanAuthorizationCode.
+const (
+	GrantTypesBeanAuthorizationCodeFalse GrantTypesBeanAuthorizationCode = "false"
+	GrantTypesBeanAuthorizationCodeTrue  GrantTypesBeanAuthorizationCode = "true"
+)
+
+// Defines values for GrantTypesBeanClientCredentials.
+const (
+	GrantTypesBeanClientCredentialsFalse GrantTypesBeanClientCredentials = "false"
+	GrantTypesBeanClientCredentialsTrue  GrantTypesBeanClientCredentials = "true"
+)
+
+// Defines values for GrantTypesBeanDeviceFlow.
+const (
+	GrantTypesBeanDeviceFlowFalse GrantTypesBeanDeviceFlow = "false"
+	GrantTypesBeanDeviceFlowTrue  GrantTypesBeanDeviceFlow = "true"
+)
+
+// Defines values for GrantTypesBeanImplicit.
+const (
+	GrantTypesBeanImplicitFalse GrantTypesBeanImplicit = "false"
+	GrantTypesBeanImplicitTrue  GrantTypesBeanImplicit = "true"
+)
+
+// Defines values for GrantTypesBeanJwtBearer.
+const (
+	GrantTypesBeanJwtBearerFalse GrantTypesBeanJwtBearer = "false"
+	GrantTypesBeanJwtBearerTrue  GrantTypesBeanJwtBearer = "true"
+)
+
+// Defines values for GrantTypesBeanPolicyAuth.
+const (
+	GrantTypesBeanPolicyAuthFalse GrantTypesBeanPolicyAuth = "false"
+	GrantTypesBeanPolicyAuthTrue  GrantTypesBeanPolicyAuth = "true"
+)
+
+// Defines values for GrantTypesBeanRopc.
+const (
+	GrantTypesBeanRopcFalse GrantTypesBeanRopc = "false"
+	GrantTypesBeanRopcTrue  GrantTypesBeanRopc = "true"
+)
+
+// Defines values for GrantTypesBeanTokenExchange.
+const (
+	GrantTypesBeanTokenExchangeFalse GrantTypesBeanTokenExchange = "false"
+	GrantTypesBeanTokenExchangeTrue  GrantTypesBeanTokenExchange = "true"
+)
+
 // Defines values for GroupMembersType.
 const (
 	GroupMembersTypeUser GroupMembersType = "user"
@@ -192,10 +265,52 @@ const (
 	MetaV2DeactivatedTimestamp MetaV2Deactivated = "timestamp"
 )
 
+// Defines values for Metadata0EnforcementType.
+const (
+	Metadata0EnforcementTypeAdaptiveNativeAppMobile Metadata0EnforcementType = "adaptiveNativeAppMobile"
+	Metadata0EnforcementTypeAdaptiveNativeAppWeb    Metadata0EnforcementType = "adaptiveNativeAppWeb"
+	Metadata0EnforcementTypeFedSSO                  Metadata0EnforcementType = "fedSSO"
+	Metadata0EnforcementTypeNativeApp               Metadata0EnforcementType = "nativeApp"
+	Metadata0EnforcementTypeNativeAppMobile         Metadata0EnforcementType = "nativeAppMobile"
+	Metadata0EnforcementTypeNativeAppWeb            Metadata0EnforcementType = "nativeAppWeb"
+)
+
+// Defines values for Metadata0Scope.
+const (
+	Metadata0ScopeAdministrators Metadata0Scope = "administrators"
+	Metadata0ScopeDevelopers     Metadata0Scope = "developers"
+)
+
+// Defines values for Metadata0State.
+const (
+	Metadata0StateACTIVE Metadata0State = "ACTIVE"
+	Metadata0StateDRAFT  Metadata0State = "DRAFT"
+	Metadata0StateDRY    Metadata0State = "DRY"
+	Metadata0StateIDLE   Metadata0State = "IDLE"
+)
+
 // Defines values for NotificationsNotifyType.
 const (
 	NotificationsNotifyTypeEMAIL NotificationsNotifyType = "EMAIL"
 	NotificationsNotifyTypeNONE  NotificationsNotifyType = "NONE"
+)
+
+// Defines values for OIDCBeanConsentAction.
+const (
+	OIDCBeanConsentActionAlwaysPrompt OIDCBeanConsentAction = "always_prompt"
+	OIDCBeanConsentActionNeverPrompt  OIDCBeanConsentAction = "never_prompt"
+)
+
+// Defines values for OIDCBeanRequirePkceVerification.
+const (
+	OIDCBeanRequirePkceVerificationFalse OIDCBeanRequirePkceVerification = "false"
+	OIDCBeanRequirePkceVerificationTrue  OIDCBeanRequirePkceVerification = "true"
+)
+
+// Defines values for OIDCTokenBeanAccessTokenType.
+const (
+	OIDCTokenBeanAccessTokenTypeDefault OIDCTokenBeanAccessTokenType = "default"
+	OIDCTokenBeanAccessTokenTypeJwt     OIDCTokenBeanAccessTokenType = "jwt"
 )
 
 // Defines values for PatchOperationOp.
@@ -283,6 +398,30 @@ const (
 	PlanPackagePendingDeploymentStateSTAGEFROMDRAFT PlanPackagePendingDeploymentState = "STAGE_FROM_DRAFT"
 	PlanPackagePendingDeploymentStateSUPERSEDE      PlanPackagePendingDeploymentState = "SUPERSEDE"
 	PlanPackagePendingDeploymentStateUPDATE         PlanPackagePendingDeploymentState = "UPDATE"
+)
+
+// Defines values for PolicyMetadataEnforcementType.
+const (
+	PolicyMetadataEnforcementTypeAdaptiveNativeAppMobile PolicyMetadataEnforcementType = "adaptiveNativeAppMobile"
+	PolicyMetadataEnforcementTypeAdaptiveNativeAppWeb    PolicyMetadataEnforcementType = "adaptiveNativeAppWeb"
+	PolicyMetadataEnforcementTypeFedSSO                  PolicyMetadataEnforcementType = "fedSSO"
+	PolicyMetadataEnforcementTypeNativeApp               PolicyMetadataEnforcementType = "nativeApp"
+	PolicyMetadataEnforcementTypeNativeAppMobile         PolicyMetadataEnforcementType = "nativeAppMobile"
+	PolicyMetadataEnforcementTypeNativeAppWeb            PolicyMetadataEnforcementType = "nativeAppWeb"
+)
+
+// Defines values for PolicyMetadataScope.
+const (
+	PolicyMetadataScopeAdministrators PolicyMetadataScope = "administrators"
+	PolicyMetadataScopeDevelopers     PolicyMetadataScope = "developers"
+)
+
+// Defines values for PolicyMetadataState.
+const (
+	PolicyMetadataStateACTIVE PolicyMetadataState = "ACTIVE"
+	PolicyMetadataStateDRAFT  PolicyMetadataState = "DRAFT"
+	PolicyMetadataStateDRY    PolicyMetadataState = "DRY"
+	PolicyMetadataStateIDLE   PolicyMetadataState = "IDLE"
 )
 
 // Defines values for ServletContextDefaultSessionTrackingModes.
@@ -406,6 +545,57 @@ const (
 	GetInstancesV2ParamsFilterEnduser  GetInstancesV2ParamsFilter = "enduser"
 )
 
+// APIAccessClientBean defines model for APIAccessClientBean.
+type APIAccessClientBean struct {
+	// AccessTokenLifetime Access token lifetime seconds.
+	AccessTokenLifetime *int32 `json:"accessTokenLifetime,omitempty" yaml:"accessTokenLifetime,omitempty"`
+
+	// AccessTokenType Type of token
+	AccessTokenType *APIAccessClientBeanAccessTokenType `json:"accessTokenType,omitempty" yaml:"accessTokenType,omitempty"`
+
+	// AdditionalConfig Additional OIDC configurations
+	AdditionalConfig *map[string]map[string]interface{} `json:"additionalConfig,omitempty" yaml:"additionalConfig,omitempty"`
+
+	// ClientID Unique identifier for a client. Auto generated on save.
+	ClientID *string `json:"clientId,omitempty" yaml:"clientId,omitempty"`
+
+	// ClientName Display client name.
+	ClientName string `json:"clientName" yaml:"clientName"`
+
+	// ClientSecret Client Secret. Will be auto-generated on save.
+	ClientSecret *string `json:"clientSecret,omitempty" yaml:"clientSecret,omitempty"`
+
+	// DefaultEntitlements List of entitlement strings.
+	DefaultEntitlements *[]string `json:"defaultEntitlements,omitempty" yaml:"defaultEntitlements,omitempty"`
+
+	// Enabled If true, client is enabled.
+	Enabled bool `json:"enabled" yaml:"enabled"`
+
+	// IPFilterOp Operator to filter ip (allow/deny).
+	IPFilterOp *string `json:"ipFilterOp,omitempty" yaml:"ipFilterOp,omitempty"`
+
+	// IPFilters List and/or range of IPs to filter ip based on ipFilterOp.
+	IPFilters *[]string `json:"ipFilters,omitempty" yaml:"ipFilters,omitempty"`
+
+	// JwkURI The URI where the relying party publishes its public keys in JSON Web Keys (JWKs) format.
+	JwkURI *string `json:"jwkUri,omitempty" yaml:"jwkUri,omitempty"`
+
+	// JwtSigningAlg JWT signing algorithm.
+	JwtSigningAlg *string `json:"jwtSigningAlg,omitempty" yaml:"jwtSigningAlg,omitempty"`
+
+	// RestrictScopes Restrict the scopes for application api access.
+	RestrictScopes *bool `json:"restrictScopes,omitempty" yaml:"restrictScopes,omitempty"`
+
+	// Scopes List of scopes.
+	Scopes *[]OIDCScopesBean `json:"scopes,omitempty" yaml:"scopes,omitempty"`
+
+	// SignKeyLabel Signature key label.
+	SignKeyLabel *string `json:"signKeyLabel,omitempty" yaml:"signKeyLabel,omitempty"`
+}
+
+// APIAccessClientBeanAccessTokenType Type of token
+type APIAccessClientBeanAccessTokenType string
+
 // APIClientAdditionalConfig defines model for APIClientAdditionalConfig.
 type APIClientAdditionalConfig struct {
 	// AllowedClientAssertionVerificationKeys a list of the allowed client assertion verification keys
@@ -524,6 +714,85 @@ type APIClientScopes struct {
 	Name *string `json:"name,omitempty" yaml:"name,omitempty"`
 }
 
+// AccessPolicyCondition defines model for AccessPolicyCondition.
+type AccessPolicyCondition struct {
+	Type *string `json:"type,omitempty" yaml:"type,omitempty"`
+}
+
+// AccessPolicyRequest The request payload to create or update a policy
+type AccessPolicyRequest struct {
+	// ContainsFirstFactor Policy contains firstFactor rules or not.
+	ContainsFirstFactor *bool `json:"containsFirstFactor,omitempty" yaml:"containsFirstFactor,omitempty"`
+
+	// Description The description of the policy
+	Description *string `json:"description,omitempty" yaml:"description,omitempty"`
+
+	// Meta Metadata for a access policy
+	Meta *Metadata0 `json:"meta,omitempty" yaml:"meta,omitempty"`
+
+	// Name The name of the policy
+	Name        string               `json:"name" yaml:"name"`
+	Rules       *[]AccessPolicyRule0 `json:"rules,omitempty" yaml:"rules,omitempty"`
+	Validations *PolicyValidations   `json:"validations,omitempty" yaml:"validations,omitempty"`
+}
+
+// AccessPolicyResult0 The result of an access policy
+type AccessPolicyResult0 struct {
+	Action *AccessPolicyResult0Action `json:"action,omitempty" yaml:"action,omitempty"`
+
+	// AuthnMethods The authentication methods
+	AuthnMethods      []string            `json:"authnMethods" yaml:"authnMethods"`
+	ServerSideActions *[]ServerSideAction `json:"serverSideActions,omitempty" yaml:"serverSideActions,omitempty"`
+}
+
+// AccessPolicyResult0Action defines model for AccessPolicyResult0.Action.
+type AccessPolicyResult0Action string
+
+// AccessPolicyRule0 An access policy rule
+type AccessPolicyRule0 struct {
+	// AlwaysRun Should this rule always run
+	AlwaysRun  bool                     `json:"alwaysRun" yaml:"alwaysRun"`
+	Conditions *[]AccessPolicyCondition `json:"conditions,omitempty" yaml:"conditions,omitempty"`
+
+	// Description The description of the rule
+	Description *string `json:"description,omitempty" yaml:"description,omitempty"`
+
+	// FirstFactor Is this a first factor rule
+	FirstFactor bool `json:"firstFactor" yaml:"firstFactor"`
+
+	// ID The rule identifier
+	ID *string `json:"id,omitempty" yaml:"id,omitempty"`
+
+	// Name The name of the rule
+	Name string `json:"name" yaml:"name"`
+
+	// Result The result of an access policy
+	Result *AccessPolicyResult0 `json:"result,omitempty" yaml:"result,omitempty"`
+}
+
+// AdaptiveAuthenticationBean defines model for AdaptiveAuthenticationBean.
+type AdaptiveAuthenticationBean struct {
+	// LicenseData License Data
+	LicenseData *string `json:"licenseData,omitempty" yaml:"licenseData,omitempty"`
+
+	// Platform platform name
+	Platform *string `json:"platform,omitempty" yaml:"platform,omitempty"`
+
+	// StorageLink Storage link
+	StorageLink *string `json:"storageLink,omitempty" yaml:"storageLink,omitempty"`
+}
+
+// AdditionalPropertiesBean defines model for AdditionalPropertiesBean.
+type AdditionalPropertiesBean struct {
+	// Name When onboarding or updating a custom application of type SAML, possible values can be metadaFileUrl or metadaFilePayload.
+	Name *string `json:"name,omitempty" yaml:"name,omitempty"`
+
+	// Value For name set as metadaFileUrl : Specify the metadaFileUrl that will take in the URL value and create the SAML application based on the URL.
+	//
+	//  For name set as metadaFilePayload : Specify the metaDataFilePayload that will take a XML value and create SAML application based on the XML specified against the value.
+	Value *string `json:"value,omitempty" yaml:"value,omitempty"`
+}
+
 // Address defines model for Address.
 type Address struct {
 	// Country The country name component. Maximum length is 128 characters.
@@ -553,6 +822,78 @@ type Address struct {
 
 // AddressType A label that indicates the attribute's function; for example, "work" or "home".
 type AddressType string
+
+// AdminApplicationWithoutProv defines model for AdminApplicationWithoutProv.
+type AdminApplicationWithoutProv struct {
+	Links *HALLink `json:"_links,omitempty" yaml:"_links,omitempty"`
+
+	// AdaptiveAuthentication Adaptive authentication data for devportal applications
+	AdaptiveAuthentication *map[string]map[string]interface{} `json:"adaptiveAuthentication,omitempty" yaml:"adaptiveAuthentication,omitempty"`
+
+	// ApplicationRefID ID of the the paret of referencing application
+	ApplicationRefID *string `json:"applicationRefId,omitempty" yaml:"applicationRefId,omitempty"`
+
+	// ApplicationState Boolean flag to indicate whether end user can use SSO with the application
+	ApplicationState bool `json:"applicationState" yaml:"applicationState"`
+
+	// ApprovalRequired Boolean flag representing  whether approval request will be sent when end user request access
+	ApprovalRequired bool `json:"approvalRequired" yaml:"approvalRequired"`
+
+	// CustomIcon URI of the icon associated by Administrator with the application
+	CustomIcon string `json:"customIcon" yaml:"customIcon"`
+
+	// DefaultIcon URI of the default icon which was associated with the application
+	DefaultIcon string `json:"defaultIcon" yaml:"defaultIcon"`
+
+	// Description Description of the application
+	Description string `json:"description" yaml:"description"`
+
+	// Icon URI of the icon API for the application
+	Icon string `json:"icon" yaml:"icon"`
+
+	// Name Name of the application
+	Name string `json:"name" yaml:"name"`
+
+	// Providers Provider Bean containing relevant attributes
+	Providers    map[string]map[string]interface{} `json:"providers" yaml:"providers"`
+	Provisioning ProvisioningBeanWithBlankFields   `json:"provisioning" yaml:"provisioning"`
+
+	// ProvisioningMode Boolean flag to indicate where JIT is supported or not.
+	ProvisioningMode string `json:"provisioningMode" yaml:"provisioningMode"`
+
+	// SignonState True if Sign On is Enabled and False if it is in Disabled.
+	SignonState *bool `json:"signonState,omitempty" yaml:"signonState,omitempty"`
+
+	// TemplateID Unique identifier representing the type of SaaS application
+	TemplateID string `json:"templateId" yaml:"templateId"`
+
+	// Type Name of the SaaS application
+	Type string `json:"type" yaml:"type"`
+
+	// VisibleOnLaunchpad Boolean flag representing  whether application is visible for end user to request access
+	VisibleOnLaunchpad bool `json:"visibleOnLaunchpad" yaml:"visibleOnLaunchpad"`
+}
+
+// AdoptionPolicyAttrMappingsBean defines model for AdoptionPolicyAttrMappingsBean.
+type AdoptionPolicyAttrMappingsBean struct {
+	// SourceID Unique identifier of the attribute
+	SourceID *string `json:"sourceId,omitempty" yaml:"sourceId,omitempty"`
+
+	// TargetName Name of the attribute
+	TargetName *string `json:"targetName,omitempty" yaml:"targetName,omitempty"`
+}
+
+// AdoptionPolicyBean defines model for AdoptionPolicyBean.
+type AdoptionPolicyBean struct {
+	MatchingAttributes *[]AdoptionPolicyAttrMappingsBean `json:"matchingAttributes,omitempty" yaml:"matchingAttributes,omitempty"`
+	RemediationPolicy  *RemediationPolicyBean            `json:"remediationPolicy,omitempty" yaml:"remediationPolicy,omitempty"`
+}
+
+// AdoptionPolicyBeanWithBlankSections defines model for AdoptionPolicyBeanWithBlankSections.
+type AdoptionPolicyBeanWithBlankSections struct {
+	MatchingAttributes *[]map[string]interface{}          `json:"matchingAttributes,omitempty" yaml:"matchingAttributes,omitempty"`
+	RemediationPolicy  *map[string]map[string]interface{} `json:"remediationPolicy,omitempty" yaml:"remediationPolicy,omitempty"`
+}
 
 // AllowBlockListInputOutput Object used to represent an allowlist and blocklist.
 type AllowBlockListInputOutput struct {
@@ -596,6 +937,122 @@ type AllowBlockListInputOutput struct {
 // AllowBlockListInputOutputAccountStatus To filter the account status.
 type AllowBlockListInputOutputAccountStatus string
 
+// AppDetLink defines model for AppDetLink.
+type AppDetLink struct {
+	Self *Self `json:"self,omitempty" yaml:"self,omitempty"`
+}
+
+// ApplicationDetailsResponseBean defines model for ApplicationDetailsResponseBean.
+type ApplicationDetailsResponseBean struct {
+	Links                  *AppDetLink                 `json:"_links,omitempty" yaml:"_links,omitempty"`
+	AdaptiveAuthentication *AdaptiveAuthenticationBean `json:"adaptiveAuthentication,omitempty" yaml:"adaptiveAuthentication,omitempty"`
+
+	// APIAccessClients List of API access clients for application
+	APIAccessClients *[]APIAccessClientBean `json:"apiAccessClients,omitempty" yaml:"apiAccessClients,omitempty"`
+
+	// ApplicationState True if application is saved and False if it is in Draft State.
+	ApplicationState *bool `json:"applicationState,omitempty" yaml:"applicationState,omitempty"`
+
+	// AttributeMappings List[AttributeMapBean], collection of attributeMapping.
+	AttributeMappings *[]AttributeMapBean       `json:"attributeMappings,omitempty" yaml:"attributeMappings,omitempty"`
+	AuthPolicy        *AuthenticationPolicyBean `json:"authPolicy,omitempty" yaml:"authPolicy,omitempty"`
+
+	// CustomIcon represents custom icon for this application
+	CustomIcon    *string            `json:"customIcon,omitempty" yaml:"customIcon,omitempty"`
+	Customization *CustomizationBean `json:"customization,omitempty" yaml:"customization,omitempty"`
+
+	// DefaultIcon represents defaulticon for this application
+	DefaultIcon *string `json:"defaultIcon,omitempty" yaml:"defaultIcon,omitempty"`
+
+	// Description description about application
+	Description       *string                `json:"description,omitempty" yaml:"description,omitempty"`
+	DevportalSettings *DevportalSettingsBean `json:"devportalSettings,omitempty" yaml:"devportalSettings,omitempty"`
+
+	// Icon represents icon for this application
+	Icon *string `json:"icon,omitempty" yaml:"icon,omitempty"`
+
+	// IdentitySources List[String], a collection of application IdentitySources.
+	IdentitySources *[]string `json:"identitySources,omitempty" yaml:"identitySources,omitempty"`
+
+	// Name Name of the Entity.
+	Name string `json:"name" yaml:"name"`
+
+	// Owners List[OwnerBean] , a colloction of owners of this application
+	Owners       *[]OwnerBean     `json:"owners,omitempty" yaml:"owners,omitempty"`
+	Providers    ProviderBean     `json:"providers" yaml:"providers"`
+	Provisioning ProvisioningBean `json:"provisioning" yaml:"provisioning"`
+
+	// ProvisioningMode Mode of provisioning for example SAMLJIT etc
+	ProvisioningMode *string `json:"provisioningMode,omitempty" yaml:"provisioningMode,omitempty"`
+
+	// Target List[Map[String, String]] , a colloction of targets of this application
+	Target *[]map[string]string `json:"target,omitempty" yaml:"target,omitempty"`
+
+	// TemplateID ID of the template for this application
+	TemplateID string `json:"templateId" yaml:"templateId"`
+
+	// Type Type of application
+	Type *string `json:"type,omitempty" yaml:"type,omitempty"`
+
+	// VisibleOnLaunchpad Visibility flag for the application on launchpad.
+	VisibleOnLaunchpad *bool `json:"visibleOnLaunchpad,omitempty" yaml:"visibleOnLaunchpad,omitempty"`
+
+	// Xforce Map[String, Map] holds XForce application details
+	Xforce *map[string]map[string]interface{} `json:"xforce,omitempty" yaml:"xforce,omitempty"`
+}
+
+// ApplicationRequestBean defines model for ApplicationRequestBean.
+type ApplicationRequestBean struct {
+	AdaptiveAuthentication *AdaptiveAuthenticationBean `json:"adaptiveAuthentication,omitempty" yaml:"adaptiveAuthentication,omitempty"`
+
+	// APIAccessClients List of API access clients for application
+	APIAccessClients *[]APIAccessClientBean `json:"apiAccessClients,omitempty" yaml:"apiAccessClients,omitempty"`
+
+	// ApplicationState True if application is saved and False if it is in Draft State.
+	ApplicationState *bool `json:"applicationState,omitempty" yaml:"applicationState,omitempty"`
+
+	// AttributeMappings List[AttributeMapBean], collection of attributeMapping.
+	AttributeMappings *[]AttributeMapBean       `json:"attributeMappings,omitempty" yaml:"attributeMappings,omitempty"`
+	AuthPolicy        *AuthenticationPolicyBean `json:"authPolicy,omitempty" yaml:"authPolicy,omitempty"`
+
+	// CustomIcon Custom Icon file name if any
+	CustomIcon    *string            `json:"customIcon,omitempty" yaml:"customIcon,omitempty"`
+	Customization *CustomizationBean `json:"customization,omitempty" yaml:"customization,omitempty"`
+
+	// DefaultIcon Default Icon file name if any
+	DefaultIcon *string `json:"defaultIcon,omitempty" yaml:"defaultIcon,omitempty"`
+
+	// Description description about application
+	Description       *string                `json:"description,omitempty" yaml:"description,omitempty"`
+	DevportalSettings *DevportalSettingsBean `json:"devportalSettings,omitempty" yaml:"devportalSettings,omitempty"`
+
+	// IdentitySources List[String], a collection of application IdentitySources.
+	IdentitySources *[]string `json:"identitySources,omitempty" yaml:"identitySources,omitempty"`
+
+	// Name Name of the Entity.
+	Name string `json:"name" yaml:"name"`
+
+	// Owners List[String] , a collection of owners of this application
+	Owners *[]string `json:"owners,omitempty" yaml:"owners,omitempty"`
+
+	// Properties List[String], a list of application properties.
+	Properties   *map[string]map[string]interface{} `json:"properties,omitempty" yaml:"properties,omitempty"`
+	Providers    ProviderBean                       `json:"providers" yaml:"providers"`
+	Provisioning ProvisioningBean                   `json:"provisioning" yaml:"provisioning"`
+
+	// ProvisioningMode Mode of provisioning for example SAMLJIT etc
+	ProvisioningMode *string `json:"provisioningMode,omitempty" yaml:"provisioningMode,omitempty"`
+
+	// Target Map[String, Boolean] , a collection of target of this application.
+	Target *map[string]bool `json:"target,omitempty" yaml:"target,omitempty"`
+
+	// TemplateID ID of the template for this application
+	TemplateID string `json:"templateId" yaml:"templateId"`
+
+	// VisibleOnLaunchpad Visibility flag for the application on launchpad.
+	VisibleOnLaunchpad *bool `json:"visibleOnLaunchpad,omitempty" yaml:"visibleOnLaunchpad,omitempty"`
+}
+
 // ApplicationV1 defines model for ApplicationV1.
 type ApplicationV1 struct {
 	Description *string `json:"description,omitempty" yaml:"description,omitempty"`
@@ -605,11 +1062,37 @@ type ApplicationV1 struct {
 	URL         *string `json:"url,omitempty" yaml:"url,omitempty"`
 }
 
+// AssertionConsumerServiceBean defines model for AssertionConsumerServiceBean.
+type AssertionConsumerServiceBean struct {
+	Default *bool `json:"default,omitempty" yaml:"default,omitempty"`
+
+	// Index Index value of the assertion consumer service url
+	Index int32 `json:"index" yaml:"index"`
+
+	// URL URL value.
+	URL string `json:"url" yaml:"url"`
+}
+
 // AsyncContext defines model for AsyncContext.
 type AsyncContext struct {
 	Request  *ServletRequest  `json:"request,omitempty" yaml:"request,omitempty"`
 	Response *ServletResponse `json:"response,omitempty" yaml:"response,omitempty"`
 	Timeout  *int64           `json:"timeout,omitempty" yaml:"timeout,omitempty"`
+}
+
+// AttributeMapBean defines model for AttributeMapBean.
+type AttributeMapBean struct {
+	// Name Name of the Entity.
+	Name string `json:"name" yaml:"name"`
+
+	// SourceID identifier of the source associated with this Target, only applicable for mapping to Attribute Source Id.
+	SourceID *string `json:"sourceId,omitempty" yaml:"sourceId,omitempty"`
+
+	// TargetAttrFormat Attribute Format for target
+	TargetAttrFormat *string `json:"targetAttrFormat,omitempty" yaml:"targetAttrFormat,omitempty"`
+
+	// TargetName Name of target
+	TargetName string `json:"targetName" yaml:"targetName"`
 }
 
 // AttributeMapping defines model for AttributeMapping.
@@ -675,6 +1158,24 @@ type Attribute0Datatype string
 // Attribute0SourceType The type of the attribute source from which the attribute value is derived
 type Attribute0SourceType string
 
+// AuthenticationPolicyBean defines model for AuthenticationPolicyBean.
+type AuthenticationPolicyBean struct {
+	ErrorCode        *string `json:"errorCode,omitempty" yaml:"errorCode,omitempty"`
+	ErrorDescription *string `json:"errorDescription,omitempty" yaml:"errorDescription,omitempty"`
+
+	// GrantTypes List of API grantTypes and the corresponding Boolean flag to indicate if the Auth Policy  will be applied on it by oidc. Supported API grant types are: ropc, jwtBearer, policyAuth  and refresh_token. See the 'Example Value' section for payload details.
+	GrantTypes *[]map[string]bool `json:"grantTypes,omitempty" yaml:"grantTypes,omitempty"`
+
+	// ID represents identifier for Authentication Policy
+	ID string `json:"id" yaml:"id"`
+
+	// Name represents name of the Authentication Policy
+	Name *AuthenticationPolicyBeanName `json:"name,omitempty" yaml:"name,omitempty"`
+}
+
+// AuthenticationPolicyBeanName represents name of the Authentication Policy
+type AuthenticationPolicyBeanName string
+
 // BadRequest0 defines model for BadRequest_0.
 type BadRequest0 struct {
 	// MessageDescription A requester locale-specific descriptive message.
@@ -682,6 +1183,12 @@ type BadRequest0 struct {
 
 	// MessageID The message key identifier.
 	MessageID string `json:"messageId" yaml:"messageId"`
+}
+
+// BookmarkBean defines model for BookmarkBean.
+type BookmarkBean struct {
+	// BookmarkURL string containing URL of Bookmark
+	BookmarkURL string `json:"bookmarkUrl" yaml:"bookmarkUrl"`
 }
 
 // BufferedReader defines model for BufferedReader.
@@ -1084,6 +1591,12 @@ type CustomAttribute struct {
 	Values []string `json:"values" yaml:"values"`
 }
 
+// CustomizationBean defines model for CustomizationBean.
+type CustomizationBean struct {
+	// ThemeID Theme identifier for the application
+	ThemeID string `json:"themeId" yaml:"themeId"`
+}
+
 // DatabaseMetaData defines model for DatabaseMetaData.
 type DatabaseMetaData struct {
 	CatalogAtStart              *bool                          `json:"catalogAtStart,omitempty" yaml:"catalogAtStart,omitempty"`
@@ -1163,6 +1676,23 @@ type DeploymentVisibility struct {
 	View      View      `json:"view" yaml:"view"`
 }
 
+// DevportalSettingsBean defines model for DevportalSettingsBean.
+type DevportalSettingsBean struct {
+	// AttributeMappings List[AttributeMapBean], collection of attributeMapping settings for the developer portal application .
+	AttributeMappings *[]AttributeMapBean       `json:"attributeMappings,omitempty" yaml:"attributeMappings,omitempty"`
+	AuthPolicy        *AuthenticationPolicyBean `json:"authPolicy,omitempty" yaml:"authPolicy,omitempty"`
+
+	// ExtendedProperties Map<String,String> a map containing Devportal extended properties.
+	ExtendedProperties *map[string]string `json:"extendedProperties,omitempty" yaml:"extendedProperties,omitempty"`
+	GrantTypes         *GrantTypesBean    `json:"grantTypes,omitempty" yaml:"grantTypes,omitempty"`
+
+	// IdentitySources List[String], a collection of application IdentitySources settings for the developer portal application.
+	IdentitySources *[]string `json:"identitySources,omitempty" yaml:"identitySources,omitempty"`
+
+	// SendAllKnownUserAttributes Boolean flag setting to indicate to return all supported claims for the developer portal application.
+	SendAllKnownUserAttributes *string `json:"sendAllKnownUserAttributes,omitempty" yaml:"sendAllKnownUserAttributes,omitempty"`
+}
+
 // Duration defines model for Duration.
 type Duration struct {
 	Nano     *int32          `json:"nano,omitempty" yaml:"nano,omitempty"`
@@ -1183,6 +1713,12 @@ type EmailAddress struct {
 
 // EmailAddressType A label that indicates the attribute function; for example, "work".  Only a single email is allowed.
 type EmailAddressType string
+
+// EmbeddedApplicationsWithoutProv defines model for EmbeddedApplicationsWithoutProv.
+type EmbeddedApplicationsWithoutProv struct {
+	Applications *[]AdminApplicationWithoutProv `json:"applications,omitempty" yaml:"applications,omitempty"`
+	TotalCount   *int32                         `json:"totalCount,omitempty" yaml:"totalCount,omitempty"`
+}
 
 // EnterpriseUser defines model for EnterpriseUser.
 type EnterpriseUser struct {
@@ -1236,6 +1772,15 @@ type ErrorResponse struct {
 	MessageID *string `json:"messageId,omitempty" yaml:"messageId,omitempty"`
 }
 
+// ErrorResponseBean defines model for ErrorResponseBean.
+type ErrorResponseBean struct {
+	// MessageDescription Text describing the error message.
+	MessageDescription string `json:"messageDescription" yaml:"messageDescription"`
+
+	// MessageID Unique identifier associated with the message.
+	MessageID *string `json:"messageId,omitempty" yaml:"messageId,omitempty"`
+}
+
 // Error0 defines model for Error_0.
 type Error0 struct {
 	// Error The OIDC error.
@@ -1279,6 +1824,15 @@ type FilterRegistration struct {
 // Forbidden0 defines model for Forbidden_0.
 type Forbidden0 struct {
 	// MessageDescription A requester locale-specific descriptive message.
+	MessageDescription string `json:"messageDescription" yaml:"messageDescription"`
+
+	// MessageID The message key identifier.
+	MessageID string `json:"messageId" yaml:"messageId"`
+}
+
+// Forbidden3 The message response to the given request
+type Forbidden3 struct {
+	// MessageDescription Requester locale specific descriptive message.
 	MessageDescription string `json:"messageDescription" yaml:"messageDescription"`
 
 	// MessageID The message key identifier.
@@ -1363,6 +1917,57 @@ type GetUsersUserResponseV2 struct {
 	// UserName The unique identifier for the user that is typically used by the user to directly authenticate to the service provider. It is often displayed to the user as their unique identifier within the system (as opposed to the id or externalId attributes, which are generally opaque and not user-friendly identifiers). Each user must include a non-empty userName value. This identifier must be unique across the service consumer's entire set of users. It must be a stable ID that does not change when the same user is returned in subsequent requests.
 	UserName string `json:"userName" yaml:"userName"`
 }
+
+// GrantTypesBean defines model for GrantTypesBean.
+type GrantTypesBean struct {
+	// AuthorizationCode Authorization Code.
+	AuthorizationCode *GrantTypesBeanAuthorizationCode `json:"authorizationCode,omitempty" yaml:"authorizationCode,omitempty"`
+
+	// ClientCredentials Allow client credentials grant type to be configured
+	ClientCredentials *GrantTypesBeanClientCredentials `json:"clientCredentials,omitempty" yaml:"clientCredentials,omitempty"`
+
+	// DeviceFlow Device Flow.
+	DeviceFlow *GrantTypesBeanDeviceFlow `json:"deviceFlow,omitempty" yaml:"deviceFlow,omitempty"`
+
+	// Implicit Implicit
+	Implicit *GrantTypesBeanImplicit `json:"implicit,omitempty" yaml:"implicit,omitempty"`
+
+	// JwtBearer JWT bearer token.
+	JwtBearer *GrantTypesBeanJwtBearer `json:"jwtBearer,omitempty" yaml:"jwtBearer,omitempty"`
+
+	// PolicyAuth Policy driven authentication token.
+	PolicyAuth *GrantTypesBeanPolicyAuth `json:"policyAuth,omitempty" yaml:"policyAuth,omitempty"`
+
+	// Ropc Resource owner password credentials.
+	Ropc *GrantTypesBeanRopc `json:"ropc,omitempty" yaml:"ropc,omitempty"`
+
+	// TokenExchange Token Exchange
+	TokenExchange *GrantTypesBeanTokenExchange `json:"tokenExchange,omitempty" yaml:"tokenExchange,omitempty"`
+}
+
+// GrantTypesBeanAuthorizationCode Authorization Code.
+type GrantTypesBeanAuthorizationCode string
+
+// GrantTypesBeanClientCredentials Allow client credentials grant type to be configured
+type GrantTypesBeanClientCredentials string
+
+// GrantTypesBeanDeviceFlow Device Flow.
+type GrantTypesBeanDeviceFlow string
+
+// GrantTypesBeanImplicit Implicit
+type GrantTypesBeanImplicit string
+
+// GrantTypesBeanJwtBearer JWT bearer token.
+type GrantTypesBeanJwtBearer string
+
+// GrantTypesBeanPolicyAuth Policy driven authentication token.
+type GrantTypesBeanPolicyAuth string
+
+// GrantTypesBeanRopc Resource owner password credentials.
+type GrantTypesBeanRopc string
+
+// GrantTypesBeanTokenExchange Token Exchange
+type GrantTypesBeanTokenExchange string
 
 // GroupMembers defines model for GroupMembers.
 type GroupMembers struct {
@@ -1492,6 +2097,16 @@ type Groups struct {
 	Value string `json:"value" yaml:"value"`
 }
 
+// HALLink defines model for HALLink.
+type HALLink struct {
+	Self *Self `json:"self,omitempty" yaml:"self,omitempty"`
+}
+
+// HALink defines model for HALink.
+type HALink struct {
+	Self *SelfLink `json:"self,omitempty" yaml:"self,omitempty"`
+}
+
 // Header The keys should be in canonical form, as returned by
 // CanonicalHeaderKey.
 type Header struct {
@@ -1551,6 +2166,15 @@ type IdentitySourceIntancesDataList struct {
 
 	// Total Total number of identity source intances configured for the tenant.
 	Total int32 `json:"total" yaml:"total"`
+}
+
+// JWTAttributeMapBean defines model for JWTAttributeMapBean.
+type JWTAttributeMapBean struct {
+	// SourceID identifier of the source associated with this Target
+	SourceID string `json:"sourceId" yaml:"sourceId"`
+
+	// TargetName Name of target
+	TargetName string `json:"targetName" yaml:"targetName"`
 }
 
 // JSONArray defines model for JsonArray.
@@ -1728,6 +2352,12 @@ type Locale struct {
 	Variant                 *string   `json:"variant,omitempty" yaml:"variant,omitempty"`
 }
 
+// ManageNameIDService defines model for ManageNameIDService.
+type ManageNameIDService struct {
+	// URL URL value.
+	URL string `json:"url" yaml:"url"`
+}
+
 // Manager defines model for Manager.
 type Manager struct {
 	// Ref The URI of the SCIM resource representing the user's manager.  This value is readonly.
@@ -1761,6 +2391,39 @@ type MetaV2 struct {
 // MetaV2Deactivated A readonly string that indicates why the account is deactivated.  Valid values are "api", "timestamp", and "cleanup".  The value "api" means that the user was deactivated by using an API.  The value "timestamp" means that the user was deactivated by the system because the account expired.  The value "cleanup" means that the user was deactivated by the system during account cleanup processing.
 type MetaV2Deactivated string
 
+// Metadata0 Metadata for a access policy
+type Metadata0 struct {
+	// EnforcementType The enforcement type of the policy
+	EnforcementType *Metadata0EnforcementType `json:"enforcementType,omitempty" yaml:"enforcementType,omitempty"`
+
+	// EvaluationContext Sub-policy evaluation details
+	EvaluationContext *map[string]string `json:"evaluationContext,omitempty" yaml:"evaluationContext,omitempty"`
+
+	// Label A label for the revision
+	Label *string `json:"label,omitempty" yaml:"label,omitempty"`
+
+	// Schema The schema version of this policy
+	Schema *string `json:"schema,omitempty" yaml:"schema,omitempty"`
+
+	// Scope Which scopes are permitted to apply this policy
+	Scope *[]Metadata0Scope `json:"scope,omitempty" yaml:"scope,omitempty"`
+
+	// State The state of the revision
+	State Metadata0State `json:"state" yaml:"state"`
+
+	// TenantDefaultPolicy should this policy be the default
+	TenantDefaultPolicy *bool `json:"tenantDefaultPolicy,omitempty" yaml:"tenantDefaultPolicy,omitempty"`
+}
+
+// Metadata0EnforcementType The enforcement type of the policy
+type Metadata0EnforcementType string
+
+// Metadata0Scope defines model for Metadata0.Scope.
+type Metadata0Scope string
+
+// Metadata0State The state of the revision
+type Metadata0State string
+
 // Name defines model for Name.
 type Name struct {
 	// FamilyName The family name of the user, or the last name in most Western languages. For example, Jensen is the family name from the full name Ms. Barbara J Jensen, PhD. Maximum length is 80 characters.
@@ -1785,6 +2448,15 @@ type NotFound0 struct {
 	MessageID string `json:"messageId" yaml:"messageId"`
 }
 
+// NotFound2 The message response to the given request
+type NotFound2 struct {
+	// MessageDescription Requester locale specific descriptive message.
+	MessageDescription string `json:"messageDescription" yaml:"messageDescription"`
+
+	// MessageID The message key identifier.
+	MessageID string `json:"messageId" yaml:"messageId"`
+}
+
 // Notifications defines model for Notifications.
 type Notifications struct {
 	// NotifyManager Indicates whether the notification should be sent to the user's manager (if one is set) when a user's password is set or modified. If the attribute is not provided, the behavior defaults to false. This attribute does not apply if the notifyType attribute is set to NONE.
@@ -1803,10 +2475,163 @@ type NotificationsNotifyType string
 // Number defines model for Number.
 type Number = map[string]interface{}
 
+// OIDCBean defines model for OIDCBean.
+type OIDCBean struct {
+	// ApplicationURL URL which will be use to trigger Single-Sign-On flow.
+	ApplicationURL *string `json:"applicationUrl,omitempty" yaml:"applicationUrl,omitempty"`
+
+	// ConsentAction Consent action
+	ConsentAction *OIDCBeanConsentAction `json:"consentAction,omitempty" yaml:"consentAction,omitempty"`
+
+	// Entitlements OIDC application entitlements
+	Entitlements        *[]string                    `json:"entitlements,omitempty" yaml:"entitlements,omitempty"`
+	GrantProperties     *OIDCGrantPropertiesBean     `json:"grantProperties,omitempty" yaml:"grantProperties,omitempty"`
+	JwtBearerProperties *OIDCJwtBearerPropertiesBean `json:"jwtBearerProperties,omitempty" yaml:"jwtBearerProperties,omitempty"`
+	Properties          *OIDCPropertiesBean          `json:"properties,omitempty" yaml:"properties,omitempty"`
+
+	// RequirePkceVerification PKCE verification
+	RequirePkceVerification *OIDCBeanRequirePkceVerification `json:"requirePkceVerification,omitempty" yaml:"requirePkceVerification,omitempty"`
+
+	// RestrictEntitlements Flag to restrict oidc entitlements
+	RestrictEntitlements *bool             `json:"restrictEntitlements,omitempty" yaml:"restrictEntitlements,omitempty"`
+	RestrictScopes       *string           `json:"restrictScopes,omitempty" yaml:"restrictScopes,omitempty"`
+	Scopes               *[]OIDCScopesBean `json:"scopes,omitempty" yaml:"scopes,omitempty"`
+	Token                *OIDCTokenBean    `json:"token,omitempty" yaml:"token,omitempty"`
+}
+
+// OIDCBeanConsentAction Consent action
+type OIDCBeanConsentAction string
+
+// OIDCBeanRequirePkceVerification PKCE verification
+type OIDCBeanRequirePkceVerification string
+
+// OIDCGrantPropertiesBean defines model for OIDCGrantPropertiesBean.
+type OIDCGrantPropertiesBean struct {
+	GenerateDeviceFlowQRCode *string `json:"generateDeviceFlowQRCode,omitempty" yaml:"generateDeviceFlowQRCode,omitempty"`
+}
+
+// OIDCJwtBearerPropertiesBean defines model for OIDCJwtBearerPropertiesBean.
+type OIDCJwtBearerPropertiesBean struct {
+	// IdentitySource Identity source of user for JWT Bearer properties.
+	IdentitySource *string `json:"identitySource,omitempty" yaml:"identitySource,omitempty"`
+
+	// UserIdentifier User Identifier for JWT Bearer grant type.
+	UserIdentifier *string `json:"userIdentifier,omitempty" yaml:"userIdentifier,omitempty"`
+}
+
+// OIDCPropertiesBean defines model for OIDCPropertiesBean.
+type OIDCPropertiesBean struct {
+	// AccessTokenExpiry Access token lifetime, in seconds
+	AccessTokenExpiry *int64 `json:"accessTokenExpiry,omitempty" yaml:"accessTokenExpiry,omitempty"`
+
+	// AdditionalConfig Additional OIDC configurations
+	AdditionalConfig *map[string]map[string]interface{} `json:"additionalConfig,omitempty" yaml:"additionalConfig,omitempty"`
+
+	// ClientID Unique identifier for a client.
+	ClientID *string `json:"clientId,omitempty" yaml:"clientId,omitempty"`
+
+	// ClientSecret Client Secret. Will be auto-generated if this parameter is not specified.
+	ClientSecret *string `json:"clientSecret,omitempty" yaml:"clientSecret,omitempty"`
+
+	// ConsentType The type of consent to be generated for this application. New applications will automatically use 'dpcm' advanced privacy consent.This is a read only attribute, if specified in the POST and PUT calls, it will be ignored.
+	ConsentType *string `json:"consentType,omitempty" yaml:"consentType,omitempty"`
+
+	// DoNotGenerateClientSecret Boolean flag to disable auto generation of OIDC client secret.
+	DoNotGenerateClientSecret *string `json:"doNotGenerateClientSecret,omitempty" yaml:"doNotGenerateClientSecret,omitempty"`
+
+	// GenerateRefreshToken Boolean flag to indicate that lifetime of authorization grant must be set.
+	GenerateRefreshToken *string         `json:"generateRefreshToken,omitempty" yaml:"generateRefreshToken,omitempty"`
+	GrantTypes           *GrantTypesBean `json:"grantTypes,omitempty" yaml:"grantTypes,omitempty"`
+
+	// IDTokenEncryptAlg ID token key management encryption algorithm. List of algorithms (id_token_encryption_alg_values_supported) available at  /oidc/endpoint/{definition_id}/.well-known/openid-configuration"
+	IDTokenEncryptAlg *string `json:"idTokenEncryptAlg,omitempty" yaml:"idTokenEncryptAlg,omitempty"`
+
+	// IDTokenEncryptEnc "ID token content encryption algorithm. List of algorithms (id_token_encryption_enc_values_supported) available at /oidc/endpoint/{definition_id}/.well-known/openid-configuration"
+	IDTokenEncryptEnc *string `json:"idTokenEncryptEnc,omitempty" yaml:"idTokenEncryptEnc,omitempty"`
+
+	// IDTokenEncryptKey ID token encryption public key label.
+	IDTokenEncryptKey *string `json:"idTokenEncryptKey,omitempty" yaml:"idTokenEncryptKey,omitempty"`
+
+	// IDTokenSigningAlg ID token signing algorithm.
+	IDTokenSigningAlg *string `json:"idTokenSigningAlg,omitempty" yaml:"idTokenSigningAlg,omitempty"`
+
+	// JwksURI Relying party URL. If not specified public key used for signature verification.
+	JwksURI *string `json:"jwksUri,omitempty" yaml:"jwksUri,omitempty"`
+
+	// RedirectUris List of redirect URIs.
+	RedirectUris *[]string `json:"redirectUris,omitempty" yaml:"redirectUris,omitempty"`
+
+	// RefreshTokenExpiry Lifetime of authorization grant. Required only when generateRefreshToken is set
+	RefreshTokenExpiry *int64 `json:"refreshTokenExpiry,omitempty" yaml:"refreshTokenExpiry,omitempty"`
+
+	// RenewRefreshToken Should renew refresh token, true or false
+	RenewRefreshToken *string `json:"renewRefreshToken,omitempty" yaml:"renewRefreshToken,omitempty"`
+
+	// RenewRefreshTokenExpiry Renew refresh token expiry value.
+	RenewRefreshTokenExpiry *int64 `json:"renewRefreshTokenExpiry,omitempty" yaml:"renewRefreshTokenExpiry,omitempty"`
+
+	// SendAllKnownUserAttributes Boolean flag to indicate to return all supported claims.
+	SendAllKnownUserAttributes *string `json:"sendAllKnownUserAttributes,omitempty" yaml:"sendAllKnownUserAttributes,omitempty"`
+
+	// SignIDToken Boolean flag to indicate that a key label must be specified to perform signing.
+	SignIDToken *string `json:"signIdToken,omitempty" yaml:"signIdToken,omitempty"`
+
+	// SigningCertificate Key label used to perform the signing. Required only when signIdToken is set.
+	SigningCertificate *string `json:"signingCertificate,omitempty" yaml:"signingCertificate,omitempty"`
+}
+
+// OIDCScopesBean defines model for OIDCScopesBean.
+type OIDCScopesBean struct {
+	Description *string `json:"description,omitempty" yaml:"description,omitempty"`
+	Name        *string `json:"name,omitempty" yaml:"name,omitempty"`
+}
+
+// OIDCTokenBean defines model for OIDCTokenBean.
+type OIDCTokenBean struct {
+	// AccessTokenType Type of token
+	AccessTokenType OIDCTokenBeanAccessTokenType `json:"accessTokenType" yaml:"accessTokenType"`
+
+	// AttributeMappings List of attribute maps
+	AttributeMappings *[]JWTAttributeMapBean `json:"attributeMappings,omitempty" yaml:"attributeMappings,omitempty"`
+
+	// Audiences List of audiences
+	Audiences *[]string `json:"audiences,omitempty" yaml:"audiences,omitempty"`
+}
+
+// OIDCTokenBeanAccessTokenType Type of token
+type OIDCTokenBeanAccessTokenType string
+
 // OperationStatusSummary defines model for OperationStatusSummary.
 type OperationStatusSummary struct {
 	Errors   *[]string            `json:"errors,omitempty" yaml:"errors,omitempty"`
 	Messages *map[string][]string `json:"messages,omitempty" yaml:"messages,omitempty"`
+}
+
+// OwnerBean defines model for OwnerBean.
+type OwnerBean struct {
+	// Email email of application Owner
+	Email *string `json:"email,omitempty" yaml:"email,omitempty"`
+
+	// FamilyName family name of the application Owner
+	FamilyName *string `json:"familyName,omitempty" yaml:"familyName,omitempty"`
+
+	// GivenName given name of the application Owner
+	GivenName *string `json:"givenName,omitempty" yaml:"givenName,omitempty"`
+
+	// ID identifier of application Owner
+	ID *string `json:"id,omitempty" yaml:"id,omitempty"`
+
+	// Name name of application Owner
+	Name *string `json:"name,omitempty" yaml:"name,omitempty"`
+
+	// Realm realm name of application Owner
+	Realm *string `json:"realm,omitempty" yaml:"realm,omitempty"`
+
+	// UserName user name of application Owner
+	UserName *string `json:"userName,omitempty" yaml:"userName,omitempty"`
+
+	// UserType identifies whether the application owner is federated or regular
+	UserType *string `json:"userType,omitempty" yaml:"userType,omitempty"`
 }
 
 // PaginatedAttribute0 defines model for PaginatedAttribute_0.
@@ -2005,6 +2830,105 @@ type PlanPackageDocumentType string
 // PlanPackagePendingDeploymentState defines model for PlanPackage.PendingDeploymentState.
 type PlanPackagePendingDeploymentState string
 
+// PolicyMetadata Metadata for a policy
+type PolicyMetadata struct {
+	// Created The time when this revision was created
+	Created *int64 `json:"created,omitempty" yaml:"created,omitempty"`
+
+	// CreatedBy The user who created this revision
+	CreatedBy       *string                        `json:"createdBy,omitempty" yaml:"createdBy,omitempty"`
+	EnforcementType *PolicyMetadataEnforcementType `json:"enforcementType,omitempty" yaml:"enforcementType,omitempty"`
+
+	// Label A label for the revision
+	Label *string `json:"label,omitempty" yaml:"label,omitempty"`
+
+	// LastActive When was this revision's state last 'ACTIVE'
+	LastActive *int64 `json:"lastActive,omitempty" yaml:"lastActive,omitempty"`
+
+	// Modified The time when this revision was last modified
+	Modified *int64 `json:"modified,omitempty" yaml:"modified,omitempty"`
+
+	// ModifiedBy The user who last modified this revision
+	ModifiedBy *string `json:"modifiedBy,omitempty" yaml:"modifiedBy,omitempty"`
+
+	// Predefined Is the policy predefined
+	Predefined *bool `json:"predefined,omitempty" yaml:"predefined,omitempty"`
+
+	// ReferencedBy Which policies reference this policy
+	ReferencedBy *[]int64 `json:"referencedBy,omitempty" yaml:"referencedBy,omitempty"`
+
+	// References Which policies does this policy reference
+	References *[]int64 `json:"references,omitempty" yaml:"references,omitempty"`
+
+	// Revision The revision number for this policy
+	Revision *int32 `json:"revision,omitempty" yaml:"revision,omitempty"`
+
+	// Schema The schema version of this policy
+	Schema *string `json:"schema,omitempty" yaml:"schema,omitempty"`
+
+	// Scope Which scopes are permitted to apply this policy
+	Scope *[]PolicyMetadataScope `json:"scope,omitempty" yaml:"scope,omitempty"`
+
+	// State The state of the revision
+	State PolicyMetadataState `json:"state" yaml:"state"`
+
+	// TenantDefaultPolicy should this policy be the default
+	TenantDefaultPolicy *bool `json:"tenantDefaultPolicy,omitempty" yaml:"tenantDefaultPolicy,omitempty"`
+}
+
+// PolicyMetadataEnforcementType defines model for PolicyMetadata.EnforcementType.
+type PolicyMetadataEnforcementType string
+
+// PolicyMetadataScope defines model for PolicyMetadata.Scope.
+type PolicyMetadataScope string
+
+// PolicyMetadataState The state of the revision
+type PolicyMetadataState string
+
+// PolicyValidations defines model for PolicyValidations.
+type PolicyValidations struct {
+	SubscriptionsNeeded *[]string `json:"subscriptionsNeeded,omitempty" yaml:"subscriptionsNeeded,omitempty"`
+}
+
+// PolicyVaultList0 A paginated list of policies
+type PolicyVaultList0 struct {
+	// Count The  number of resources returned
+	Count int32 `json:"count" yaml:"count"`
+
+	// Limit The limit of the number of resources
+	Limit int32 `json:"limit" yaml:"limit"`
+
+	// Page The current page of results
+	Page     int32      `json:"page" yaml:"page"`
+	Policies *[]Policy0 `json:"policies,omitempty" yaml:"policies,omitempty"`
+
+	// Total The total number of resources found
+	Total int32 `json:"total" yaml:"total"`
+}
+
+// Policy0 A policy
+type Policy0 struct {
+	// Description The description of the policy
+	Description *string `json:"description,omitempty" yaml:"description,omitempty"`
+
+	// ID The policy identifier
+	ID *int64 `json:"id,omitempty" yaml:"id,omitempty"`
+
+	// Meta Metadata for a policy
+	Meta *PolicyMetadata `json:"meta,omitempty" yaml:"meta,omitempty"`
+
+	// Name The name of the policy
+	Name                  string               `json:"name" yaml:"name"`
+	RequiredSubscriptions *[]string            `json:"requiredSubscriptions,omitempty" yaml:"requiredSubscriptions,omitempty"`
+	Rules                 *[]AccessPolicyRule0 `json:"rules,omitempty" yaml:"rules,omitempty"`
+	Validations           *PolicyValidations   `json:"validations,omitempty" yaml:"validations,omitempty"`
+}
+
+// PostApplicationResponseBean defines model for PostApplicationResponseBean.
+type PostApplicationResponseBean struct {
+	Links *HALink `json:"_links,omitempty" yaml:"_links,omitempty"`
+}
+
 // PostEval defines model for PostEval.
 type PostEval struct {
 	// Custom A custom rule for transforming. This will tranform the attribute mapping. Only one of 'id' or 'custom' can be set on an attribute mapping.
@@ -2026,6 +2950,95 @@ type ProductPackageUpdateJSONBody struct {
 type ProfileAttribute struct {
 	// Name The name of the attribute in the application profile.
 	Name string `json:"name" yaml:"name"`
+}
+
+// ProviderBean defines model for ProviderBean.
+type ProviderBean struct {
+	Bookmark *BookmarkBean `json:"bookmark,omitempty" yaml:"bookmark,omitempty"`
+	Oidc     *OIDCBean     `json:"oidc,omitempty" yaml:"oidc,omitempty"`
+	Saml     *SAMLBean     `json:"saml,omitempty" yaml:"saml,omitempty"`
+	Sso      SSOBean       `json:"sso" yaml:"sso"`
+	Wsfed    *WsFedBean    `json:"wsfed,omitempty" yaml:"wsfed,omitempty"`
+}
+
+// ProvisioningAttrMappingsBean defines model for ProvisioningAttrMappingsBean.
+type ProvisioningAttrMappingsBean struct {
+	// ApplyTransformation Specify the ruleId to indicate the transformation that needs to be carried out. To be used when advanced scripting is to be used.
+	ApplyTransformation *string `json:"applyTransformation,omitempty" yaml:"applyTransformation,omitempty"`
+
+	// InboundTracking boolean flag indicating if any change in the attribute's value on the target should be propagated to cloud directory.
+	InboundTracking *bool `json:"inboundTracking,omitempty" yaml:"inboundTracking,omitempty"`
+
+	// OutboundTracking boolean flag representing whether any change in the attribute's value should be percolated to the target
+	OutboundTracking *bool `json:"outboundTracking,omitempty" yaml:"outboundTracking,omitempty"`
+
+	// RuleType Rule type to indicate custom or built in rules. Indicates if this is a built in predefined rule or a custom rule.
+	RuleType *string `json:"ruleType,omitempty" yaml:"ruleType,omitempty"`
+
+	// SourceID Unique identifier of the attribute
+	SourceID *string `json:"sourceId,omitempty" yaml:"sourceId,omitempty"`
+
+	// TargetName Name of the attribute
+	TargetName *string `json:"targetName,omitempty" yaml:"targetName,omitempty"`
+}
+
+// ProvisioningAuthnBean defines model for ProvisioningAuthnBean.
+type ProvisioningAuthnBean struct {
+	Properties *map[string]string `json:"properties,omitempty" yaml:"properties,omitempty"`
+}
+
+// ProvisioningBean defines model for ProvisioningBean.
+type ProvisioningBean struct {
+	AttributeMappings        *[]ProvisioningAttrMappingsBean `json:"attributeMappings,omitempty" yaml:"attributeMappings,omitempty"`
+	Authentication           *ProvisioningAuthnBean          `json:"authentication,omitempty" yaml:"authentication,omitempty"`
+	Extension                *ProvisioningExtensionBean      `json:"extension,omitempty" yaml:"extension,omitempty"`
+	Policies                 *ProvisioningPoliciesBean       `json:"policies,omitempty" yaml:"policies,omitempty"`
+	ProvisioningState        *string                         `json:"provisioningState,omitempty" yaml:"provisioningState,omitempty"`
+	ReverseAttributeMappings *[]ProvisioningAttrMappingsBean `json:"reverseAttributeMappings,omitempty" yaml:"reverseAttributeMappings,omitempty"`
+}
+
+// ProvisioningBeanWithBlankFields defines model for ProvisioningBeanWithBlankFields.
+type ProvisioningBeanWithBlankFields struct {
+	AttributeMappings        *[]map[string]interface{}                  `json:"attributeMappings,omitempty" yaml:"attributeMappings,omitempty"`
+	Authentication           *map[string]map[string]interface{}         `json:"authentication,omitempty" yaml:"authentication,omitempty"`
+	Extension                *map[string]map[string]interface{}         `json:"extension,omitempty" yaml:"extension,omitempty"`
+	Policies                 *ProvisioningPoliciesBeanWithBlankSections `json:"policies,omitempty" yaml:"policies,omitempty"`
+	ProvisioningState        *string                                    `json:"provisioningState,omitempty" yaml:"provisioningState,omitempty"`
+	ReverseAttributeMappings *[]map[string]interface{}                  `json:"reverseAttributeMappings,omitempty" yaml:"reverseAttributeMappings,omitempty"`
+}
+
+// ProvisioningExtensionBean defines model for ProvisioningExtensionBean.
+type ProvisioningExtensionBean struct {
+	Properties *map[string]map[string]interface{} `json:"properties,omitempty" yaml:"properties,omitempty"`
+}
+
+// ProvisioningPoliciesBean defines model for ProvisioningPoliciesBean.
+type ProvisioningPoliciesBean struct {
+	AdoptionPolicy *AdoptionPolicyBean `json:"adoptionPolicy,omitempty" yaml:"adoptionPolicy,omitempty"`
+	DeProvAction   *string             `json:"deProvAction,omitempty" yaml:"deProvAction,omitempty"`
+	DeProvPolicy   *string             `json:"deProvPolicy,omitempty" yaml:"deProvPolicy,omitempty"`
+	GracePeriod    *int64              `json:"gracePeriod,omitempty" yaml:"gracePeriod,omitempty"`
+	PasswordSync   *string             `json:"passwordSync,omitempty" yaml:"passwordSync,omitempty"`
+	ProvPolicy     *string             `json:"provPolicy,omitempty" yaml:"provPolicy,omitempty"`
+}
+
+// ProvisioningPoliciesBeanWithBlankSections defines model for ProvisioningPoliciesBeanWithBlankSections.
+type ProvisioningPoliciesBeanWithBlankSections struct {
+	AdoptionPolicy *AdoptionPolicyBeanWithBlankSections `json:"adoptionPolicy,omitempty" yaml:"adoptionPolicy,omitempty"`
+	DeProvAction   *string                              `json:"deProvAction,omitempty" yaml:"deProvAction,omitempty"`
+	DeProvPolicy   *string                              `json:"deProvPolicy,omitempty" yaml:"deProvPolicy,omitempty"`
+	GracePeriod    *int64                               `json:"gracePeriod,omitempty" yaml:"gracePeriod,omitempty"`
+	PasswordSync   *string                              `json:"passwordSync,omitempty" yaml:"passwordSync,omitempty"`
+	ProvPolicy     *string                              `json:"provPolicy,omitempty" yaml:"provPolicy,omitempty"`
+}
+
+// RemediationPolicyBean defines model for RemediationPolicyBean.
+type RemediationPolicyBean struct {
+	// AutoRemediateOnUpdate This flag indicates if automatic remediation be set to true when remediation policy is changed. Auto remediation will be triggered if this flag is set to true and when policy is changed from existing policy to either ON_CI or ON_TARGET
+	AutoRemediateOnUpdate *bool `json:"autoRemediateOnUpdate,omitempty" yaml:"autoRemediateOnUpdate,omitempty"`
+
+	// Policy Remediation policy. Has to be one of the following values ON_CI, NONE, ON_TARGET
+	Policy *string `json:"policy,omitempty" yaml:"policy,omitempty"`
 }
 
 // ResultSet defines model for ResultSet.
@@ -2050,6 +3063,77 @@ type ResultSet struct {
 // ResultSetMetaData defines model for ResultSetMetaData.
 type ResultSetMetaData struct {
 	ColumnCount *int32 `json:"columnCount,omitempty" yaml:"columnCount,omitempty"`
+}
+
+// SAMLBean defines model for SAMLBean.
+type SAMLBean struct {
+	// AdditionalProperties List, a collection of additional config for saml configuration.
+	AdditionalProperties *[]AdditionalPropertiesBean `json:"additionalProperties,omitempty" yaml:"additionalProperties,omitempty"`
+
+	// AssertionConsumerService List, a collection of assertion consumer service url details.
+	AssertionConsumerService []AssertionConsumerServiceBean `json:"assertionConsumerService" yaml:"assertionConsumerService"`
+
+	// JustInTimeProvisioning Boolean indicating if SAML JIT is enabled.
+	JustInTimeProvisioning *string              `json:"justInTimeProvisioning,omitempty" yaml:"justInTimeProvisioning,omitempty"`
+	ManageNameIDService    *ManageNameIDService `json:"manageNameIDService,omitempty" yaml:"manageNameIDService,omitempty"`
+	Properties             SAMLPropertiesBean   `json:"properties" yaml:"properties"`
+
+	// SingleLogoutService List, a collection of single logout service url details.
+	SingleLogoutService *[]SingleLogoutServiceBean `json:"singleLogoutService,omitempty" yaml:"singleLogoutService,omitempty"`
+}
+
+// SAMLPropertiesBean defines model for SAMLPropertiesBean.
+type SAMLPropertiesBean struct {
+	// AssertionConsumerServiceURL Service provider's assertion consumer service url.
+	AssertionConsumerServiceURL string `json:"assertionConsumerServiceUrl" yaml:"assertionConsumerServiceUrl"`
+
+	// BlockEncryptionAlgorithm Algorithm to be used for encryption.
+	BlockEncryptionAlgorithm *string `json:"blockEncryptionAlgorithm,omitempty" yaml:"blockEncryptionAlgorithm,omitempty"`
+
+	// CompanyName Name of the service provider company.
+	CompanyName *string `json:"companyName,omitempty" yaml:"companyName,omitempty"`
+
+	// DefaultNameIDFormat Default nameId format.
+	DefaultNameIDFormat *string `json:"defaultNameIdFormat,omitempty" yaml:"defaultNameIdFormat,omitempty"`
+
+	// EncryptAssertion Boolean flag to indicate whether the SAML assertion will be encrypted.
+	EncryptAssertion *string `json:"encryptAssertion,omitempty" yaml:"encryptAssertion,omitempty"`
+
+	// EncryptionKeyIdentifier Identifier of the certificate that is used for encrypting the response.
+	EncryptionKeyIdentifier *string `json:"encryptionKeyIdentifier,omitempty" yaml:"encryptionKeyIdentifier,omitempty"`
+
+	// GenerateUniqueID Boolean flag to indicate whether the "UniqueID" is used in combination with providerId for checking uniqueness at the federation level.
+	GenerateUniqueID *string `json:"generateUniqueID,omitempty" yaml:"generateUniqueID,omitempty"`
+
+	// IciReservedSubjectNameID Attribute source identifier.
+	IciReservedSubjectNameID *string `json:"ici_reserved_subjectNameID,omitempty" yaml:"ici_reserved_subjectNameID,omitempty"`
+
+	// IncludeAllAttributes Boolean flag to indicate whether all known attributes of the user will be included in the SAML assertion.
+	IncludeAllAttributes *string `json:"includeAllAttributes,omitempty" yaml:"includeAllAttributes,omitempty"`
+
+	// ProviderID Unique identifier of the service provider. Also known as Entity Id or Issuer Id.
+	ProviderID string `json:"providerId" yaml:"providerId"`
+
+	// SessionNotOnOrAfter SAML configuration for SessionNotOnOrAfter
+	SessionNotOnOrAfter *string `json:"sessionNotOnOrAfter,omitempty" yaml:"sessionNotOnOrAfter,omitempty"`
+
+	// SignAuthnResponse Boolean flag to indicate whether IDP will sign the SAML authentication response sent to the service provider.
+	SignAuthnResponse *string `json:"signAuthnResponse,omitempty" yaml:"signAuthnResponse,omitempty"`
+
+	// SignatureAlgorithm Signature algorithm to be used for signing the SAML response / assertion. Supported values are RSA-SHA1, RSA-SHA256, RSA-SHA512, ECDSA-SHA256, ECDSA-SHA384, ECDSA-SHA512
+	SignatureAlgorithm *string `json:"signatureAlgorithm,omitempty" yaml:"signatureAlgorithm,omitempty"`
+
+	// SignatureValidationKeyIdentifier Identifier of the certificate that is used for validating the request signature.
+	SignatureValidationKeyIdentifier *string `json:"signatureValidationKeyIdentifier,omitempty" yaml:"signatureValidationKeyIdentifier,omitempty"`
+
+	// SigningKeyIdentifier Value of the Signing certificate.
+	SigningKeyIdentifier *string `json:"signingKeyIdentifier,omitempty" yaml:"signingKeyIdentifier,omitempty"`
+
+	// UniqueID Unique id generated.
+	UniqueID *string `json:"uniqueID,omitempty" yaml:"uniqueID,omitempty"`
+
+	// ValidateAuthnRequest Boolean flag to indicate whether the IDP should validate the SAML request signature.
+	ValidateAuthnRequest *string `json:"validateAuthnRequest,omitempty" yaml:"validateAuthnRequest,omitempty"`
 }
 
 // SQLException defines model for SQLException.
@@ -2077,6 +3161,24 @@ type SQLWarning struct {
 	Suppressed       *[]Throwable         `json:"suppressed,omitempty" yaml:"suppressed,omitempty"`
 }
 
+// SSOBean defines model for SSOBean.
+type SSOBean struct {
+	// DomainName Domain Name for SSO
+	DomainName string `json:"domainName" yaml:"domainName"`
+
+	// IdpInitiatedSSOSupport string representation for IDP initiated SSO Support
+	IdpInitiatedSSOSupport *string `json:"idpInitiatedSSOSupport,omitempty" yaml:"idpInitiatedSSOSupport,omitempty"`
+
+	// SpssoURL String containing SPSSO URL
+	SpssoURL *string `json:"spssoUrl,omitempty" yaml:"spssoUrl,omitempty"`
+
+	// TargetURL String containing Target URL
+	TargetURL *string `json:"targetUrl,omitempty" yaml:"targetUrl,omitempty"`
+
+	// UserOptions string representation for User Options
+	UserOptions *string `json:"userOptions,omitempty" yaml:"userOptions,omitempty"`
+}
+
 // SchemaAttribute defines model for SchemaAttribute.
 type SchemaAttribute struct {
 	// AttributeName The attribute name in the schema that is associated with the attribute source
@@ -2090,6 +3192,37 @@ type SchemaAttribute struct {
 
 	// ScimName The SCIM name that is associated with the schema attribute
 	ScimName string `json:"scimName" yaml:"scimName"`
+}
+
+// SearchAdminApplicationWithoutProvResponseBean defines model for SearchAdminApplicationWithoutProvResponseBean.
+type SearchAdminApplicationWithoutProvResponseBean struct {
+	Embedded   *EmbeddedApplicationsWithoutProv `json:"_embedded,omitempty" yaml:"_embedded,omitempty"`
+	Links      *HALLink                         `json:"_links,omitempty" yaml:"_links,omitempty"`
+	TotalCount *int32                           `json:"totalCount,omitempty" yaml:"totalCount,omitempty"`
+}
+
+// Self defines model for Self.
+type Self struct {
+	// Href URI of an application to get more details.
+	Href string `json:"href" yaml:"href"`
+}
+
+// SelfLink defines model for SelfLink.
+type SelfLink struct {
+	// Href URI of an application to get more details. This URI contains the unique identifier of the newly created application.
+	Href string `json:"href" yaml:"href"`
+
+	// ReconciliationID Reconciliation id of the on-boarding recon operation.
+	ReconciliationID string `json:"reconciliationId" yaml:"reconciliationId"`
+
+	// Title Name of the newly created application.
+	Title string `json:"title" yaml:"title"`
+}
+
+// ServerSideAction The server side actions for the policy
+type ServerSideAction struct {
+	ActionID *string `json:"actionId,omitempty" yaml:"actionId,omitempty"`
+	Version  *string `json:"version,omitempty" yaml:"version,omitempty"`
 }
 
 // ServletContext defines model for ServletContext.
@@ -2195,6 +3328,15 @@ type SessionCookieConfig struct {
 	Name     *string `json:"name,omitempty" yaml:"name,omitempty"`
 	Path     *string `json:"path,omitempty" yaml:"path,omitempty"`
 	Secure   *bool   `json:"secure,omitempty" yaml:"secure,omitempty"`
+}
+
+// SingleLogoutServiceBean defines model for SingleLogoutServiceBean.
+type SingleLogoutServiceBean struct {
+	// Binding Single logout service binding
+	Binding string `json:"binding" yaml:"binding"`
+
+	// URL Single logout service url
+	URL string `json:"url" yaml:"url"`
 }
 
 // StackTraceElement defines model for StackTraceElement.
@@ -2439,6 +3581,15 @@ type TransformObject struct {
 	StatusCode *int64 `json:"statusCode,omitempty" yaml:"statusCode,omitempty"`
 }
 
+// Unauthorized1 The message response to the given request
+type Unauthorized1 struct {
+	// MessageDescription Requester locale specific descriptive message.
+	MessageDescription string `json:"messageDescription" yaml:"messageDescription"`
+
+	// MessageID The message key identifier.
+	MessageID string `json:"messageId" yaml:"messageId"`
+}
+
 // UserGroupV1 Represents a user group
 type UserGroupV1 struct {
 	Description *string `json:"description,omitempty" yaml:"description,omitempty"`
@@ -2559,6 +3710,42 @@ type View struct {
 // ViewType defines model for View.Type.
 type ViewType string
 
+// WsFedActiveProfileBean defines model for WsFedActiveProfileBean.
+type WsFedActiveProfileBean struct {
+	DefaultRealm *string `json:"defaultRealm,omitempty" yaml:"defaultRealm,omitempty"`
+}
+
+// WsFedAdditionalPropetties defines model for WsFedAdditionalPropetties.
+type WsFedAdditionalPropetties struct {
+	Name  *string                 `json:"name,omitempty" yaml:"name,omitempty"`
+	Value *map[string]interface{} `json:"value,omitempty" yaml:"value,omitempty"`
+}
+
+// WsFedBean defines model for WsFedBean.
+type WsFedBean struct {
+	Properties *WsFedPropertiesBean `json:"properties,omitempty" yaml:"properties,omitempty"`
+}
+
+// WsFedPropertiesBean defines model for WsFedPropertiesBean.
+type WsFedPropertiesBean struct {
+	ActiveProfile *WsFedActiveProfileBean `json:"activeProfile,omitempty" yaml:"activeProfile,omitempty"`
+
+	// AdditionalProperties List of additional WSFed properties.
+	AdditionalProperties     []WsFedAdditionalPropetties `json:"additionalProperties" yaml:"additionalProperties"`
+	CallbackURL              *string                     `json:"callbackURL,omitempty" yaml:"callbackURL,omitempty"`
+	IciReservedSubjectNameID *string                     `json:"ici_reserved_subjectNameID,omitempty" yaml:"ici_reserved_subjectNameID,omitempty"`
+	MultipleDomainsEnabled   *string                     `json:"multipleDomainsEnabled,omitempty" yaml:"multipleDomainsEnabled,omitempty"`
+	ProviderID               *string                     `json:"providerId,omitempty" yaml:"providerId,omitempty"`
+	SigningSettings          *WsFedSigningSettingsBean   `json:"signingSettings,omitempty" yaml:"signingSettings,omitempty"`
+}
+
+// WsFedSigningSettingsBean defines model for WsFedSigningSettingsBean.
+type WsFedSigningSettingsBean struct {
+	KeyLabel           *string `json:"keyLabel,omitempty" yaml:"keyLabel,omitempty"`
+	SignSamlAssertion  *string `json:"signSamlAssertion,omitempty" yaml:"signSamlAssertion,omitempty"`
+	SignatureAlgorithm *string `json:"signatureAlgorithm,omitempty" yaml:"signatureAlgorithm,omitempty"`
+}
+
 // PostOauth2TokenParams defines parameters for PostOauth2Token.
 type PostOauth2TokenParams struct {
 	// Authorization The basic authorization header that contains a base64-encoded client ID and the client secret. Use this header as an alternative to sending the client ID and secret in the form parameters.
@@ -2582,6 +3769,21 @@ type GetAPIClientsParams struct {
 
 // BulkDeleteAPIClientJSONBody defines parameters for BulkDeleteAPIClient.
 type BulkDeleteAPIClientJSONBody = []BulkOperation
+
+// SearchApplicationsParams defines parameters for SearchApplications.
+type SearchApplicationsParams struct {
+	// Page Ordinality of the page to fetch. Required for paginated queries.
+	Page *string `form:"page,omitempty" json:"page,omitempty"`
+
+	// Limit Total number of applications to return in each page. Cannot be greater than count. Required for paginated queries.
+	Limit *string `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Search Search query to return matching applications e.g search="q={searchString}". The query returns list of application which has {searchString} as a sub-string in application name. Examples: 1. If a tenant has Applications with name App1, App12, App123 and Query is search="q=pp12" then the applications returned will be App12 & App123. If search="q=pp1", then all the applications which contains App1 in it will be returned i.e. App1, App12, App123.
+	Search *string `form:"search,omitempty" json:"search,omitempty"`
+
+	// Sort Attributes to sort results on, supported values are 'name' and 'entityid'. Prepend the attribute with '+' or '-' sign for ascending and descending sorted order respectively. If not specified, sorted in ascending order on entityid. The entity id corresponds to application id.
+	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
+}
 
 // GetAllAttributesParams defines parameters for GetAllAttributes.
 type GetAllAttributesParams struct {
@@ -2875,6 +4077,18 @@ type GetInstancesV2Params struct {
 // GetInstancesV2ParamsFilter defines parameters for GetInstancesV2.
 type GetInstancesV2ParamsFilter string
 
+// ListAccessPoliciesParams defines parameters for ListAccessPolicies.
+type ListAccessPoliciesParams struct {
+	// Pagination Controls the results that are returned in a page.<br><br>You can use the following query parameters:<br><br><b>count</b> - Optional. Use to define the total number of results that are returned from the data store. The maximum allowed value is 1000. If excluded will be set to limit.<br><br><b>page</b> - Use to identify the requested page, or the offset.<br><br><b>limit</b> - Use to define the total number of results that are returned per page. The maximum allowed value is 1000.<br><br>A maximum of 200 results are returned if no pagination query parameters are passed.<br><br><b>Note</b>: The pagination parameter value must be HTML encoded. Use the prefix "pagination=" in the query parameter.<br><br><b>Example</b>: Paginate on count=10&page=1&limit=5<br>pagination=count%3D10%26page%3D1%26limit%3D5
+	Pagination *string `form:"pagination,omitempty" json:"pagination,omitempty"`
+
+	// Search Returns results based on the search criteria.<br><br>Valid operators for Strings are = , != and contains. Use double quotation marks for the search values.<br>Valid operators for Booleans are = and !=<br>Valid operators for Numbers are >=, >, &lt;=, &lt;, = and !=<br><br><b>Note</b>: The search parameter value must be HTML encoded. Use the prefix "search=" in the query parameter.<br><br><b>Example</b>: Search on id contains "fd45"&enabled=true<br>search=id%20contains%20%22fd45%22%26enabled%3Dtrue
+	Search *string `form:"search,omitempty" json:"search,omitempty"`
+
+	// Filter Displays results based on the filter criteria.<br><br>Filter values to be inclusive or exclusive only. It cannot be combined.<br><br>Use a comma (,) to separate multiple filter parameters.<br><br><b>Note</b>: The filter parameter value must be HTML encoded. Use the prefix "filter=" in the query parameter.<br><br><b>Examples</b><br>Filter to return only id : filter=id<br>Filter to exclude id and enabled : filter=%21id,enabled
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+}
+
 // PostOauth2TokenFormdataRequestBody defines body for PostOauth2Token for application/x-www-form-urlencoded ContentType.
 type PostOauth2TokenFormdataRequestBody = TokenRequest
 
@@ -2886,6 +4100,9 @@ type CreateAPIClientJSONRequestBody = APIClientConfigRequest
 
 // UpdateAPIClientJSONRequestBody defines body for UpdateAPIClient for application/json ContentType.
 type UpdateAPIClientJSONRequestBody = APIClientConfig
+
+// CreateApplicationJSONRequestBody defines body for CreateApplication for application/json ContentType.
+type CreateApplicationJSONRequestBody = ApplicationRequestBean
 
 // RegisterThemeTemplatesMultipartRequestBody defines body for RegisterThemeTemplates for multipart/form-data ContentType.
 type RegisterThemeTemplatesMultipartRequestBody RegisterThemeTemplatesMultipartBody
@@ -2919,6 +4136,15 @@ type CreateIdentitySourceV2JSONRequestBody = IdentitySourceInstancesData
 
 // UpdateIdentitySourceV2JSONRequestBody defines body for UpdateIdentitySourceV2 for application/json ContentType.
 type UpdateIdentitySourceV2JSONRequestBody = IdentitySourceInstancesData
+
+// CreateAccessPolicyJSONRequestBody defines body for CreateAccessPolicy for application/json ContentType.
+type CreateAccessPolicyJSONRequestBody = AccessPolicyRequest
+
+// CreateAccessPolicyRevisionJSONRequestBody defines body for CreateAccessPolicyRevision for application/json ContentType.
+type CreateAccessPolicyRevisionJSONRequestBody = AccessPolicyRequest
+
+// UpdateAccessPolicyJSONRequestBody defines body for UpdateAccessPolicy for application/json ContentType.
+type UpdateAccessPolicyJSONRequestBody = AccessPolicyRequest
 
 // Getter for additional properties for Header. Returns the specified
 // element and whether it was found
@@ -3105,6 +4331,23 @@ type ClientInterface interface {
 
 	UpdateAPIClient(ctx context.Context, clientID string, body UpdateAPIClientJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// SearchApplications request
+	SearchApplications(ctx context.Context, params *SearchApplicationsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateApplicationWithBody request with any body
+	CreateApplicationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CreateApplication(ctx context.Context, body CreateApplicationJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteApplication request
+	DeleteApplication(ctx context.Context, applicationID string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetApplication request
+	GetApplication(ctx context.Context, applicationID string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateApplicationWithBody request with any body
+	UpdateApplicationWithBody(ctx context.Context, applicationID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetAllAttributes request
 	GetAllAttributes(ctx context.Context, params *GetAllAttributesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -3216,6 +4459,30 @@ type ClientInterface interface {
 	UpdateIdentitySourceV2WithBody(ctx context.Context, instanceID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	UpdateIdentitySourceV2(ctx context.Context, instanceID string, body UpdateIdentitySourceV2JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListAccessPolicies request
+	ListAccessPolicies(ctx context.Context, params *ListAccessPoliciesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateAccessPolicyWithBody request with any body
+	CreateAccessPolicyWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CreateAccessPolicy(ctx context.Context, body CreateAccessPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteAccessPolicy request
+	DeleteAccessPolicy(ctx context.Context, policyID int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetAccessPolicy request
+	GetAccessPolicy(ctx context.Context, policyID int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateAccessPolicyRevisionWithBody request with any body
+	CreateAccessPolicyRevisionWithBody(ctx context.Context, policyID int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CreateAccessPolicyRevision(ctx context.Context, policyID int64, body CreateAccessPolicyRevisionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateAccessPolicyWithBody request with any body
+	UpdateAccessPolicyWithBody(ctx context.Context, policyID int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UpdateAccessPolicy(ctx context.Context, policyID int64, body UpdateAccessPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 }
 
 func (c *Client) PostOauth2TokenWithBody(ctx context.Context, params *PostOauth2TokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -3340,6 +4607,78 @@ func (c *Client) UpdateAPIClientWithBody(ctx context.Context, clientID string, c
 
 func (c *Client) UpdateAPIClient(ctx context.Context, clientID string, body UpdateAPIClientJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateAPIClientRequest(c.Server, clientID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) SearchApplications(ctx context.Context, params *SearchApplicationsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewSearchApplicationsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateApplicationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateApplicationRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateApplication(ctx context.Context, body CreateApplicationJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateApplicationRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) DeleteApplication(ctx context.Context, applicationID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteApplicationRequest(c.Server, applicationID)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetApplication(ctx context.Context, applicationID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetApplicationRequest(c.Server, applicationID)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UpdateApplicationWithBody(ctx context.Context, applicationID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateApplicationRequestWithBody(c.Server, applicationID, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -3830,6 +5169,114 @@ func (c *Client) UpdateIdentitySourceV2(ctx context.Context, instanceID string, 
 	return c.Client.Do(req)
 }
 
+func (c *Client) ListAccessPolicies(ctx context.Context, params *ListAccessPoliciesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAccessPoliciesRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateAccessPolicyWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAccessPolicyRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateAccessPolicy(ctx context.Context, body CreateAccessPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAccessPolicyRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) DeleteAccessPolicy(ctx context.Context, policyID int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteAccessPolicyRequest(c.Server, policyID)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetAccessPolicy(ctx context.Context, policyID int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAccessPolicyRequest(c.Server, policyID)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateAccessPolicyRevisionWithBody(ctx context.Context, policyID int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAccessPolicyRevisionRequestWithBody(c.Server, policyID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateAccessPolicyRevision(ctx context.Context, policyID int64, body CreateAccessPolicyRevisionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAccessPolicyRevisionRequest(c.Server, policyID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UpdateAccessPolicyWithBody(ctx context.Context, policyID int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAccessPolicyRequestWithBody(c.Server, policyID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UpdateAccessPolicy(ctx context.Context, policyID int64, body UpdateAccessPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAccessPolicyRequest(c.Server, policyID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // NewPostOauth2TokenRequestWithFormdataBody calls the generic PostOauth2Token builder with application/x-www-form-urlencoded body
 func NewPostOauth2TokenRequestWithFormdataBody(server string, params *PostOauth2TokenParams, body PostOauth2TokenFormdataRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -4158,6 +5605,247 @@ func NewUpdateAPIClientRequestWithBody(server string, clientID string, contentTy
 	}
 
 	operationPath := fmt.Sprintf("/v1.0/apiclients/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewSearchApplicationsRequest generates requests for SearchApplications
+func NewSearchApplicationsRequest(server string, params *SearchApplicationsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1.0/applications")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Search != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "search", runtime.ParamLocationQuery, *params.Search); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Sort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateApplicationRequest calls the generic CreateApplication builder with application/json body
+func NewCreateApplicationRequest(server string, body CreateApplicationJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateApplicationRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewCreateApplicationRequestWithBody generates requests for CreateApplication with any type of body
+func NewCreateApplicationRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1.0/applications")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteApplicationRequest generates requests for DeleteApplication
+func NewDeleteApplicationRequest(server string, applicationID string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "applicationId", runtime.ParamLocationPath, applicationID)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1.0/applications/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetApplicationRequest generates requests for GetApplication
+func NewGetApplicationRequest(server string, applicationID string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "applicationId", runtime.ParamLocationPath, applicationID)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1.0/applications/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateApplicationRequestWithBody generates requests for UpdateApplication with any type of body
+func NewUpdateApplicationRequestWithBody(server string, applicationID string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "applicationId", runtime.ParamLocationPath, applicationID)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1.0/applications/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -6327,6 +8015,289 @@ func NewUpdateIdentitySourceV2RequestWithBody(server string, instanceID string, 
 	return req, nil
 }
 
+// NewListAccessPoliciesRequest generates requests for ListAccessPolicies
+func NewListAccessPoliciesRequest(server string, params *ListAccessPoliciesParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v5.0/policyvault/accesspolicy")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Pagination != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "pagination", runtime.ParamLocationQuery, *params.Pagination); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Search != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "search", runtime.ParamLocationQuery, *params.Search); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateAccessPolicyRequest calls the generic CreateAccessPolicy builder with application/json body
+func NewCreateAccessPolicyRequest(server string, body CreateAccessPolicyJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateAccessPolicyRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewCreateAccessPolicyRequestWithBody generates requests for CreateAccessPolicy with any type of body
+func NewCreateAccessPolicyRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v5.0/policyvault/accesspolicy")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteAccessPolicyRequest generates requests for DeleteAccessPolicy
+func NewDeleteAccessPolicyRequest(server string, policyID int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "policyId", runtime.ParamLocationPath, policyID)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v5.0/policyvault/accesspolicy/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetAccessPolicyRequest generates requests for GetAccessPolicy
+func NewGetAccessPolicyRequest(server string, policyID int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "policyId", runtime.ParamLocationPath, policyID)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v5.0/policyvault/accesspolicy/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateAccessPolicyRevisionRequest calls the generic CreateAccessPolicyRevision builder with application/json body
+func NewCreateAccessPolicyRevisionRequest(server string, policyID int64, body CreateAccessPolicyRevisionJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateAccessPolicyRevisionRequestWithBody(server, policyID, "application/json", bodyReader)
+}
+
+// NewCreateAccessPolicyRevisionRequestWithBody generates requests for CreateAccessPolicyRevision with any type of body
+func NewCreateAccessPolicyRevisionRequestWithBody(server string, policyID int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "policyId", runtime.ParamLocationPath, policyID)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v5.0/policyvault/accesspolicy/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewUpdateAccessPolicyRequest calls the generic UpdateAccessPolicy builder with application/json body
+func NewUpdateAccessPolicyRequest(server string, policyID int64, body UpdateAccessPolicyJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateAccessPolicyRequestWithBody(server, policyID, "application/json", bodyReader)
+}
+
+// NewUpdateAccessPolicyRequestWithBody generates requests for UpdateAccessPolicy with any type of body
+func NewUpdateAccessPolicyRequestWithBody(server string, policyID int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "policyId", runtime.ParamLocationPath, policyID)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v5.0/policyvault/accesspolicy/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 func (c *Client) applyEditors(ctx context.Context, req *http.Request, additionalEditors []RequestEditorFn) error {
 	for _, r := range c.RequestEditors {
 		if err := r(ctx, req); err != nil {
@@ -6398,6 +8369,23 @@ type ClientWithResponsesInterface interface {
 	UpdateAPIClientWithBodyWithResponse(ctx context.Context, clientID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAPIClientObject, error)
 
 	UpdateAPIClientWithResponse(ctx context.Context, clientID string, body UpdateAPIClientJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAPIClientObject, error)
+
+	// SearchApplicationsWithResponse request
+	SearchApplicationsWithResponse(ctx context.Context, params *SearchApplicationsParams, reqEditors ...RequestEditorFn) (*SearchApplicationsObject, error)
+
+	// CreateApplicationWithBodyWithResponse request with any body
+	CreateApplicationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateApplicationObject, error)
+
+	CreateApplicationWithResponse(ctx context.Context, body CreateApplicationJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateApplicationObject, error)
+
+	// DeleteApplicationWithResponse request
+	DeleteApplicationWithResponse(ctx context.Context, applicationID string, reqEditors ...RequestEditorFn) (*DeleteApplicationObject, error)
+
+	// GetApplicationWithResponse request
+	GetApplicationWithResponse(ctx context.Context, applicationID string, reqEditors ...RequestEditorFn) (*GetApplicationObject, error)
+
+	// UpdateApplicationWithBodyWithResponse request with any body
+	UpdateApplicationWithBodyWithResponse(ctx context.Context, applicationID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateApplicationObject, error)
 
 	// GetAllAttributesWithResponse request
 	GetAllAttributesWithResponse(ctx context.Context, params *GetAllAttributesParams, reqEditors ...RequestEditorFn) (*GetAllAttributesObject, error)
@@ -6510,6 +8498,30 @@ type ClientWithResponsesInterface interface {
 	UpdateIdentitySourceV2WithBodyWithResponse(ctx context.Context, instanceID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIdentitySourceV2Object, error)
 
 	UpdateIdentitySourceV2WithResponse(ctx context.Context, instanceID string, body UpdateIdentitySourceV2JSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateIdentitySourceV2Object, error)
+
+	// ListAccessPoliciesWithResponse request
+	ListAccessPoliciesWithResponse(ctx context.Context, params *ListAccessPoliciesParams, reqEditors ...RequestEditorFn) (*ListAccessPoliciesObject, error)
+
+	// CreateAccessPolicyWithBodyWithResponse request with any body
+	CreateAccessPolicyWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAccessPolicyObject, error)
+
+	CreateAccessPolicyWithResponse(ctx context.Context, body CreateAccessPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAccessPolicyObject, error)
+
+	// DeleteAccessPolicyWithResponse request
+	DeleteAccessPolicyWithResponse(ctx context.Context, policyID int64, reqEditors ...RequestEditorFn) (*DeleteAccessPolicyObject, error)
+
+	// GetAccessPolicyWithResponse request
+	GetAccessPolicyWithResponse(ctx context.Context, policyID int64, reqEditors ...RequestEditorFn) (*GetAccessPolicyObject, error)
+
+	// CreateAccessPolicyRevisionWithBodyWithResponse request with any body
+	CreateAccessPolicyRevisionWithBodyWithResponse(ctx context.Context, policyID int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAccessPolicyRevisionObject, error)
+
+	CreateAccessPolicyRevisionWithResponse(ctx context.Context, policyID int64, body CreateAccessPolicyRevisionJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAccessPolicyRevisionObject, error)
+
+	// UpdateAccessPolicyWithBodyWithResponse request with any body
+	UpdateAccessPolicyWithBodyWithResponse(ctx context.Context, policyID int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAccessPolicyObject, error)
+
+	UpdateAccessPolicyWithResponse(ctx context.Context, policyID int64, body UpdateAccessPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAccessPolicyObject, error)
 }
 
 type PostOauth2TokenObject struct {
@@ -6664,6 +8676,116 @@ func (r UpdateAPIClientObject) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r UpdateAPIClientObject) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type SearchApplicationsObject struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *SearchAdminApplicationWithoutProvResponseBean
+	JSON400      *ErrorResponseBean
+}
+
+// Status returns HTTPResponse.Status
+func (r SearchApplicationsObject) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r SearchApplicationsObject) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CreateApplicationObject struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *PostApplicationResponseBean
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateApplicationObject) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateApplicationObject) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type DeleteApplicationObject struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteApplicationObject) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteApplicationObject) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetApplicationObject struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *ApplicationDetailsResponseBean
+	JSON404      *ErrorResponseBean
+}
+
+// Status returns HTTPResponse.Status
+func (r GetApplicationObject) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetApplicationObject) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UpdateApplicationObject struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateApplicationObject) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateApplicationObject) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -7452,6 +9574,151 @@ func (r UpdateIdentitySourceV2Object) StatusCode() int {
 	return 0
 }
 
+type ListAccessPoliciesObject struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *PolicyVaultList0
+	JSON401      *Unauthorized1
+	JSON403      *Forbidden3
+	JSON404      *NotFound2
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAccessPoliciesObject) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAccessPoliciesObject) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CreateAccessPolicyObject struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *Policy0
+	JSON401      *Unauthorized1
+	JSON403      *Forbidden3
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateAccessPolicyObject) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateAccessPolicyObject) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type DeleteAccessPolicyObject struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON401      *Unauthorized1
+	JSON403      *Forbidden3
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteAccessPolicyObject) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteAccessPolicyObject) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetAccessPolicyObject struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *Policy0
+	JSON401      *Unauthorized1
+	JSON403      *Forbidden3
+	JSON404      *NotFound2
+}
+
+// Status returns HTTPResponse.Status
+func (r GetAccessPolicyObject) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetAccessPolicyObject) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CreateAccessPolicyRevisionObject struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *Policy0
+	JSON401      *Unauthorized1
+	JSON403      *Forbidden3
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateAccessPolicyRevisionObject) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateAccessPolicyRevisionObject) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UpdateAccessPolicyObject struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *Policy0
+	JSON401      *Unauthorized1
+	JSON403      *Forbidden3
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateAccessPolicyObject) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateAccessPolicyObject) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 // PostOauth2TokenWithBodyWithResponse request with arbitrary body returning *PostOauth2TokenObject
 func (c *ClientWithResponses) PostOauth2TokenWithBodyWithResponse(ctx context.Context, params *PostOauth2TokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostOauth2TokenObject, error) {
 	rsp, err := c.PostOauth2TokenWithBody(ctx, params, contentType, body, reqEditors...)
@@ -7545,6 +9812,59 @@ func (c *ClientWithResponses) UpdateAPIClientWithResponse(ctx context.Context, c
 		return nil, err
 	}
 	return ParseUpdateAPIClientObject(rsp)
+}
+
+// SearchApplicationsWithResponse request returning *SearchApplicationsObject
+func (c *ClientWithResponses) SearchApplicationsWithResponse(ctx context.Context, params *SearchApplicationsParams, reqEditors ...RequestEditorFn) (*SearchApplicationsObject, error) {
+	rsp, err := c.SearchApplications(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSearchApplicationsObject(rsp)
+}
+
+// CreateApplicationWithBodyWithResponse request with arbitrary body returning *CreateApplicationObject
+func (c *ClientWithResponses) CreateApplicationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateApplicationObject, error) {
+	rsp, err := c.CreateApplicationWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateApplicationObject(rsp)
+}
+
+func (c *ClientWithResponses) CreateApplicationWithResponse(ctx context.Context, body CreateApplicationJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateApplicationObject, error) {
+	rsp, err := c.CreateApplication(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateApplicationObject(rsp)
+}
+
+// DeleteApplicationWithResponse request returning *DeleteApplicationObject
+func (c *ClientWithResponses) DeleteApplicationWithResponse(ctx context.Context, applicationID string, reqEditors ...RequestEditorFn) (*DeleteApplicationObject, error) {
+	rsp, err := c.DeleteApplication(ctx, applicationID, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteApplicationObject(rsp)
+}
+
+// GetApplicationWithResponse request returning *GetApplicationObject
+func (c *ClientWithResponses) GetApplicationWithResponse(ctx context.Context, applicationID string, reqEditors ...RequestEditorFn) (*GetApplicationObject, error) {
+	rsp, err := c.GetApplication(ctx, applicationID, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetApplicationObject(rsp)
+}
+
+// UpdateApplicationWithBodyWithResponse request with arbitrary body returning *UpdateApplicationObject
+func (c *ClientWithResponses) UpdateApplicationWithBodyWithResponse(ctx context.Context, applicationID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateApplicationObject, error) {
+	rsp, err := c.UpdateApplicationWithBody(ctx, applicationID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateApplicationObject(rsp)
 }
 
 // GetAllAttributesWithResponse request returning *GetAllAttributesObject
@@ -7899,6 +10219,84 @@ func (c *ClientWithResponses) UpdateIdentitySourceV2WithResponse(ctx context.Con
 	return ParseUpdateIdentitySourceV2Object(rsp)
 }
 
+// ListAccessPoliciesWithResponse request returning *ListAccessPoliciesObject
+func (c *ClientWithResponses) ListAccessPoliciesWithResponse(ctx context.Context, params *ListAccessPoliciesParams, reqEditors ...RequestEditorFn) (*ListAccessPoliciesObject, error) {
+	rsp, err := c.ListAccessPolicies(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAccessPoliciesObject(rsp)
+}
+
+// CreateAccessPolicyWithBodyWithResponse request with arbitrary body returning *CreateAccessPolicyObject
+func (c *ClientWithResponses) CreateAccessPolicyWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAccessPolicyObject, error) {
+	rsp, err := c.CreateAccessPolicyWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAccessPolicyObject(rsp)
+}
+
+func (c *ClientWithResponses) CreateAccessPolicyWithResponse(ctx context.Context, body CreateAccessPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAccessPolicyObject, error) {
+	rsp, err := c.CreateAccessPolicy(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAccessPolicyObject(rsp)
+}
+
+// DeleteAccessPolicyWithResponse request returning *DeleteAccessPolicyObject
+func (c *ClientWithResponses) DeleteAccessPolicyWithResponse(ctx context.Context, policyID int64, reqEditors ...RequestEditorFn) (*DeleteAccessPolicyObject, error) {
+	rsp, err := c.DeleteAccessPolicy(ctx, policyID, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteAccessPolicyObject(rsp)
+}
+
+// GetAccessPolicyWithResponse request returning *GetAccessPolicyObject
+func (c *ClientWithResponses) GetAccessPolicyWithResponse(ctx context.Context, policyID int64, reqEditors ...RequestEditorFn) (*GetAccessPolicyObject, error) {
+	rsp, err := c.GetAccessPolicy(ctx, policyID, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAccessPolicyObject(rsp)
+}
+
+// CreateAccessPolicyRevisionWithBodyWithResponse request with arbitrary body returning *CreateAccessPolicyRevisionObject
+func (c *ClientWithResponses) CreateAccessPolicyRevisionWithBodyWithResponse(ctx context.Context, policyID int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAccessPolicyRevisionObject, error) {
+	rsp, err := c.CreateAccessPolicyRevisionWithBody(ctx, policyID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAccessPolicyRevisionObject(rsp)
+}
+
+func (c *ClientWithResponses) CreateAccessPolicyRevisionWithResponse(ctx context.Context, policyID int64, body CreateAccessPolicyRevisionJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAccessPolicyRevisionObject, error) {
+	rsp, err := c.CreateAccessPolicyRevision(ctx, policyID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAccessPolicyRevisionObject(rsp)
+}
+
+// UpdateAccessPolicyWithBodyWithResponse request with arbitrary body returning *UpdateAccessPolicyObject
+func (c *ClientWithResponses) UpdateAccessPolicyWithBodyWithResponse(ctx context.Context, policyID int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAccessPolicyObject, error) {
+	rsp, err := c.UpdateAccessPolicyWithBody(ctx, policyID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAccessPolicyObject(rsp)
+}
+
+func (c *ClientWithResponses) UpdateAccessPolicyWithResponse(ctx context.Context, policyID int64, body UpdateAccessPolicyJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAccessPolicyObject, error) {
+	rsp, err := c.UpdateAccessPolicy(ctx, policyID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAccessPolicyObject(rsp)
+}
+
 // ParsePostOauth2TokenObject parses an HTTP response from a PostOauth2TokenWithResponse call
 func ParsePostOauth2TokenObject(rsp *http.Response) (*PostOauth2TokenObject, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -8093,6 +10491,130 @@ func ParseUpdateAPIClientObject(rsp *http.Response) (*UpdateAPIClientObject, err
 	}
 
 	response := &UpdateAPIClientObject{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseSearchApplicationsObject parses an HTTP response from a SearchApplicationsWithResponse call
+func ParseSearchApplicationsObject(rsp *http.Response) (*SearchApplicationsObject, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &SearchApplicationsObject{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest SearchAdminApplicationWithoutProvResponseBean
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponseBean
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateApplicationObject parses an HTTP response from a CreateApplicationWithResponse call
+func ParseCreateApplicationObject(rsp *http.Response) (*CreateApplicationObject, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateApplicationObject{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest PostApplicationResponseBean
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteApplicationObject parses an HTTP response from a DeleteApplicationWithResponse call
+func ParseDeleteApplicationObject(rsp *http.Response) (*DeleteApplicationObject, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteApplicationObject{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseGetApplicationObject parses an HTTP response from a GetApplicationWithResponse call
+func ParseGetApplicationObject(rsp *http.Response) (*GetApplicationObject, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetApplicationObject{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ApplicationDetailsResponseBean
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponseBean
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateApplicationObject parses an HTTP response from a UpdateApplicationWithResponse call
+func ParseUpdateApplicationObject(rsp *http.Response) (*UpdateApplicationObject, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateApplicationObject{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -9434,6 +11956,253 @@ func ParseUpdateIdentitySourceV2Object(rsp *http.Response) (*UpdateIdentitySourc
 	response := &UpdateIdentitySourceV2Object{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseListAccessPoliciesObject parses an HTTP response from a ListAccessPoliciesWithResponse call
+func ParseListAccessPoliciesObject(rsp *http.Response) (*ListAccessPoliciesObject, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAccessPoliciesObject{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest PolicyVaultList0
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized1
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden3
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound2
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateAccessPolicyObject parses an HTTP response from a CreateAccessPolicyWithResponse call
+func ParseCreateAccessPolicyObject(rsp *http.Response) (*CreateAccessPolicyObject, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateAccessPolicyObject{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest Policy0
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized1
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden3
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteAccessPolicyObject parses an HTTP response from a DeleteAccessPolicyWithResponse call
+func ParseDeleteAccessPolicyObject(rsp *http.Response) (*DeleteAccessPolicyObject, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteAccessPolicyObject{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized1
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden3
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetAccessPolicyObject parses an HTTP response from a GetAccessPolicyWithResponse call
+func ParseGetAccessPolicyObject(rsp *http.Response) (*GetAccessPolicyObject, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetAccessPolicyObject{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Policy0
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized1
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden3
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound2
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateAccessPolicyRevisionObject parses an HTTP response from a CreateAccessPolicyRevisionWithResponse call
+func ParseCreateAccessPolicyRevisionObject(rsp *http.Response) (*CreateAccessPolicyRevisionObject, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateAccessPolicyRevisionObject{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest Policy0
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized1
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden3
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateAccessPolicyObject parses an HTTP response from a UpdateAccessPolicyWithResponse call
+func ParseUpdateAccessPolicyObject(rsp *http.Response) (*UpdateAccessPolicyObject, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateAccessPolicyObject{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Policy0
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthorized1
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden3
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
 	}
 
 	return response, nil
