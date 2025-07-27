@@ -1600,6 +1600,12 @@ type ClientAuthentication struct {
 // ClientAuthenticationClientAssertionType The format of client assertion.
 type ClientAuthenticationClientAssertionType string
 
+// CommandInfo defines model for CommandInfo.
+type CommandInfo struct {
+	CommandClass *string `json:"commandClass,omitempty" yaml:"commandClass,omitempty"`
+	CommandName  *string `json:"commandName,omitempty" yaml:"commandName,omitempty"`
+}
+
 // ConfigDataObject defines model for ConfigDataObject.
 type ConfigDataObject struct {
 	CreatedAt *time.Time `json:"createdAt,omitempty" yaml:"createdAt,omitempty"`
@@ -1691,6 +1697,47 @@ type CustomAttribute struct {
 type CustomizationBean struct {
 	// ThemeID Theme identifier for the application
 	ThemeID string `json:"themeId" yaml:"themeId"`
+}
+
+// DataFlavor defines model for DataFlavor.
+type DataFlavor struct {
+	DefaultRepresentationClassAsString *string `json:"defaultRepresentationClassAsString,omitempty" yaml:"defaultRepresentationClassAsString,omitempty"`
+	FlavorJavaFileListType             *bool   `json:"flavorJavaFileListType,omitempty" yaml:"flavorJavaFileListType,omitempty"`
+	FlavorRemoteObjectType             *bool   `json:"flavorRemoteObjectType,omitempty" yaml:"flavorRemoteObjectType,omitempty"`
+	FlavorSerializedObjectType         *bool   `json:"flavorSerializedObjectType,omitempty" yaml:"flavorSerializedObjectType,omitempty"`
+	FlavorTextType                     *bool   `json:"flavorTextType,omitempty" yaml:"flavorTextType,omitempty"`
+	HumanPresentableName               *string `json:"humanPresentableName,omitempty" yaml:"humanPresentableName,omitempty"`
+	MimeType                           *string `json:"mimeType,omitempty" yaml:"mimeType,omitempty"`
+	MimeTypeSerializedObject           *bool   `json:"mimeTypeSerializedObject,omitempty" yaml:"mimeTypeSerializedObject,omitempty"`
+	PrimaryType                        *string `json:"primaryType,omitempty" yaml:"primaryType,omitempty"`
+	RepresentationClassByteBuffer      *bool   `json:"representationClassByteBuffer,omitempty" yaml:"representationClassByteBuffer,omitempty"`
+	RepresentationClassCharBuffer      *bool   `json:"representationClassCharBuffer,omitempty" yaml:"representationClassCharBuffer,omitempty"`
+	RepresentationClassInputStream     *bool   `json:"representationClassInputStream,omitempty" yaml:"representationClassInputStream,omitempty"`
+	RepresentationClassReader          *bool   `json:"representationClassReader,omitempty" yaml:"representationClassReader,omitempty"`
+	RepresentationClassRemote          *bool   `json:"representationClassRemote,omitempty" yaml:"representationClassRemote,omitempty"`
+	RepresentationClassSerializable    *bool   `json:"representationClassSerializable,omitempty" yaml:"representationClassSerializable,omitempty"`
+	SubType                            *string `json:"subType,omitempty" yaml:"subType,omitempty"`
+}
+
+// DataHandler defines model for DataHandler.
+type DataHandler struct {
+	AllCommands         *[]CommandInfo          `json:"allCommands,omitempty" yaml:"allCommands,omitempty"`
+	Content             *map[string]interface{} `json:"content,omitempty" yaml:"content,omitempty"`
+	ContentType         *string                 `json:"contentType,omitempty" yaml:"contentType,omitempty"`
+	DataSource          *DataSource             `json:"dataSource,omitempty" yaml:"dataSource,omitempty"`
+	InputStream         *InputStream            `json:"inputStream,omitempty" yaml:"inputStream,omitempty"`
+	Name                *string                 `json:"name,omitempty" yaml:"name,omitempty"`
+	OutputStream        *OutputStream           `json:"outputStream,omitempty" yaml:"outputStream,omitempty"`
+	PreferredCommands   *[]CommandInfo          `json:"preferredCommands,omitempty" yaml:"preferredCommands,omitempty"`
+	TransferDataFlavors *[]DataFlavor           `json:"transferDataFlavors,omitempty" yaml:"transferDataFlavors,omitempty"`
+}
+
+// DataSource defines model for DataSource.
+type DataSource struct {
+	ContentType  *string       `json:"contentType,omitempty" yaml:"contentType,omitempty"`
+	InputStream  *InputStream  `json:"inputStream,omitempty" yaml:"inputStream,omitempty"`
+	Name         *string       `json:"name,omitempty" yaml:"name,omitempty"`
+	OutputStream *OutputStream `json:"outputStream,omitempty" yaml:"outputStream,omitempty"`
 }
 
 // DatabaseMetaData defines model for DatabaseMetaData.
@@ -2241,6 +2288,22 @@ type Header struct {
 	AdditionalProperties map[string][]string `json:"-" yaml:"-"`
 }
 
+// IAttachment defines model for IAttachment.
+type IAttachment struct {
+	ContentID   *string              `json:"contentId,omitempty" yaml:"contentId,omitempty"`
+	ContentType *MediaType1          `json:"contentType,omitempty" yaml:"contentType,omitempty"`
+	DataHandler *DataHandler         `json:"dataHandler,omitempty" yaml:"dataHandler,omitempty"`
+	Headers     *map[string][]string `json:"headers,omitempty" yaml:"headers,omitempty"`
+}
+
+// IMultipartBody defines model for IMultipartBody.
+type IMultipartBody struct {
+	AllAttachments   *[]IAttachment `json:"allAttachments,omitempty" yaml:"allAttachments,omitempty"`
+	ChildAttachments *[]IAttachment `json:"childAttachments,omitempty" yaml:"childAttachments,omitempty"`
+	RootAttachment   *IAttachment   `json:"rootAttachment,omitempty" yaml:"rootAttachment,omitempty"`
+	Type             *MediaType1    `json:"type,omitempty" yaml:"type,omitempty"`
+}
+
 // IdentitySourceInstancesData defines model for IdentitySourceInstancesData.
 type IdentitySourceInstancesData struct {
 	// AttributeMappings A set of attribute mappings that are associated with the identity source instance.
@@ -2296,6 +2359,9 @@ type IdentitySourceIntancesDataList struct {
 	// Total Total number of identity source intances configured for the tenant.
 	Total int32 `json:"total" yaml:"total"`
 }
+
+// InputStream defines model for InputStream.
+type InputStream = map[string]interface{}
 
 // JWTAttributeMapBean defines model for JWTAttributeMapBean.
 type JWTAttributeMapBean struct {
@@ -2497,6 +2563,15 @@ type Manager struct {
 
 	// Value The "id" of the SCIM resource representing the user's manager.
 	Value *string `json:"value,omitempty" yaml:"value,omitempty"`
+}
+
+// MediaType1 defines model for MediaType1.
+type MediaType1 struct {
+	Parameters      *map[string]string `json:"parameters,omitempty" yaml:"parameters,omitempty"`
+	Subtype         *string            `json:"subtype,omitempty" yaml:"subtype,omitempty"`
+	Type            *string            `json:"type,omitempty" yaml:"type,omitempty"`
+	WildcardSubtype *bool              `json:"wildcardSubtype,omitempty" yaml:"wildcardSubtype,omitempty"`
+	WildcardType    *bool              `json:"wildcardType,omitempty" yaml:"wildcardType,omitempty"`
 }
 
 // MetaV2 defines model for MetaV2.
@@ -2801,6 +2876,9 @@ type OperationStatusSummary struct {
 	Errors   *[]string            `json:"errors,omitempty" yaml:"errors,omitempty"`
 	Messages *map[string][]string `json:"messages,omitempty" yaml:"messages,omitempty"`
 }
+
+// OutputStream defines model for OutputStream.
+type OutputStream = map[string]interface{}
 
 // OwnerBean defines model for OwnerBean.
 type OwnerBean struct {
@@ -4122,6 +4200,12 @@ type GetOnpremAgentParams struct {
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 }
 
+// TransformSourceModelToTargetModelParams defines parameters for TransformSourceModelToTargetModel.
+type TransformSourceModelToTargetModelParams struct {
+	// Authorization Authorization Header
+	Authorization string `json:"Authorization" yaml:"Authorization"`
+}
+
 // PostOauth2TokenParams defines parameters for PostOauth2Token.
 type PostOauth2TokenParams struct {
 	// Authorization The basic authorization header that contains a base64-encoded client ID and the client secret. Use this header as an alternative to sending the client ID and secret in the form parameters.
@@ -4772,6 +4856,9 @@ type ClientInterface interface {
 
 	UpdateOnpremAgent(ctx context.Context, id string, body UpdateOnpremAgentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// TransformSourceModelToTargetModel request
+	TransformSourceModelToTargetModel(ctx context.Context, params *TransformSourceModelToTargetModelParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// PostOauth2TokenWithBody request with any body
 	PostOauth2TokenWithBody(ctx context.Context, params *PostOauth2TokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -5081,6 +5168,18 @@ func (c *Client) UpdateOnpremAgentWithBody(ctx context.Context, id string, conte
 
 func (c *Client) UpdateOnpremAgent(ctx context.Context, id string, body UpdateOnpremAgentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateOnpremAgentRequest(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) TransformSourceModelToTargetModel(ctx context.Context, params *TransformSourceModelToTargetModelParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewTransformSourceModelToTargetModelRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -6365,6 +6464,46 @@ func NewUpdateOnpremAgentRequestWithBody(server string, id string, contentType s
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewTransformSourceModelToTargetModelRequest generates requests for TransformSourceModelToTargetModel
+func NewTransformSourceModelToTargetModelRequest(server string, params *TransformSourceModelToTargetModelParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/flows/v1.0/config/models/transform")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, params.Authorization)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Authorization", headerParam0)
+
+	}
 
 	return req, nil
 }
@@ -10068,6 +10207,9 @@ type ClientWithResponsesInterface interface {
 
 	UpdateOnpremAgentWithResponse(ctx context.Context, id string, body UpdateOnpremAgentJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateOnpremAgentObject, error)
 
+	// TransformSourceModelToTargetModelWithResponse request
+	TransformSourceModelToTargetModelWithResponse(ctx context.Context, params *TransformSourceModelToTargetModelParams, reqEditors ...RequestEditorFn) (*TransformSourceModelToTargetModelObject, error)
+
 	// PostOauth2TokenWithBodyWithResponse request with any body
 	PostOauth2TokenWithBodyWithResponse(ctx context.Context, params *PostOauth2TokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostOauth2TokenObject, error)
 
@@ -10426,6 +10568,27 @@ func (r UpdateOnpremAgentObject) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r UpdateOnpremAgentObject) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type TransformSourceModelToTargetModelObject struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r TransformSourceModelToTargetModelObject) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r TransformSourceModelToTargetModelObject) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -12015,6 +12178,15 @@ func (c *ClientWithResponses) UpdateOnpremAgentWithResponse(ctx context.Context,
 	return ParseUpdateOnpremAgentObject(rsp)
 }
 
+// TransformSourceModelToTargetModelWithResponse request returning *TransformSourceModelToTargetModelObject
+func (c *ClientWithResponses) TransformSourceModelToTargetModelWithResponse(ctx context.Context, params *TransformSourceModelToTargetModelParams, reqEditors ...RequestEditorFn) (*TransformSourceModelToTargetModelObject, error) {
+	rsp, err := c.TransformSourceModelToTargetModel(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseTransformSourceModelToTargetModelObject(rsp)
+}
+
 // PostOauth2TokenWithBodyWithResponse request with arbitrary body returning *PostOauth2TokenObject
 func (c *ClientWithResponses) PostOauth2TokenWithBodyWithResponse(ctx context.Context, params *PostOauth2TokenParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostOauth2TokenObject, error) {
 	rsp, err := c.PostOauth2TokenWithBody(ctx, params, contentType, body, reqEditors...)
@@ -13017,6 +13189,22 @@ func ParseUpdateOnpremAgentObject(rsp *http.Response) (*UpdateOnpremAgentObject,
 		}
 		response.JSON404 = &dest
 
+	}
+
+	return response, nil
+}
+
+// ParseTransformSourceModelToTargetModelObject parses an HTTP response from a TransformSourceModelToTargetModelWithResponse call
+func ParseTransformSourceModelToTargetModelObject(rsp *http.Response) (*TransformSourceModelToTargetModelObject, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &TransformSourceModelToTargetModelObject{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
 	}
 
 	return response, nil

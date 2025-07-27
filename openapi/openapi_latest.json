@@ -294,7 +294,12 @@
         },
         {
             "name": "Webhook-Configuration"
+        },
+        {
+            "name": "Flows Management Service 1.0"
         }
+
+        
     ],
     "paths": {
         "/oauth2/token": {
@@ -5757,6 +5762,72 @@
                 },
                 "x-publicAPI": "true"
             }
+        },
+        "/flows/v1.0/config/models/transform": {
+            "post": {
+                "tags": [
+                    "Flows Management Service 1.0"
+                ],
+                "summary": "Transforms the source model input to target model format.",
+                "description": "Transforms the source model input to target model format.<br><br><b>Entitlements:</b><br> - Internal Only (Available only for intra-service calls)",
+                "operationId": "transformSourceModelToTargetModel",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/IMultipartBody"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Authorization Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Transformed model file"
+                    },
+                    "400": {
+                        "description": "The server was unable to process the request due to invalid information sent by the user.",
+                        "schema": {
+                            "$ref": "#/components/schemas/BadRequest"
+                        }
+                    },
+                    "401": {
+                        "description": "The unauthenticated user does not have the permissions to perform the requested operation.",
+                        "schema": {
+                            "$ref": "#/components/schemas/Unauthorized"
+                        }
+                    },
+                    "403": {
+                        "description": "The authenticated user does not have the permissions to perform the requested operation.",
+                        "schema": {
+                            "$ref": "#/components/schemas/Forbidden"
+                        }
+                    },
+                    "500": {
+                        "description": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                        }
+                    }
+                },
+                "x-publicAPI": "true"
+            },
+            "parameters": []
         }
     },
     "components": {
