@@ -101,14 +101,18 @@ func (c *GroupClient) GetGroupByID(ctx context.Context, id string) (*Group, stri
 	return Group, resp.HTTPResponse.Request.URL.String(), nil
 }
 
-func (c *GroupClient) GetGroups(ctx context.Context, sort string, count string) (*GroupListResponse, string, error) {
+func (c *GroupClient) GetGroups(ctx context.Context, sortBy string, sortOrder string, count string) (*GroupListResponse, string, error) {
 
 	vc := contextx.GetVerifyContext(ctx)
 	client := openapi.NewClientWithOptions(ctx, vc.Tenant, c.Client)
 
 	params := &openapi.GetGroupsParams{}
-	if len(sort) > 0 {
-		params.SortBy = &sort
+	if len(sortBy) > 0 {
+		params.SortBy = &sortBy
+	}
+	if len(sortOrder) > 0 {
+		orderValue := openapi.GetGroupsParamsSortOrder(sortOrder)
+		params.SortOrder = &orderValue
 	}
 	if len(count) > 0 {
 		params.Count = &count
