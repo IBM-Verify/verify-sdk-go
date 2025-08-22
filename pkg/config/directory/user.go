@@ -280,3 +280,24 @@ func (c *UserClient) GetUserId(ctx context.Context, name string) (string, error)
 
 	return id, nil
 }
+
+func UserPatchExample() *openapi.PatchBody {
+	patchBody := &openapi.PatchBody{
+		Operations: []openapi.PatchOperation0{
+			{
+				Op:   openapi.PatchOperation0OpReplace,
+				Path: "title",
+			},
+			{
+				Op:   openapi.PatchOperation0OpAdd,
+				Path: "emails",
+			},
+		},
+	}
+	var value1 interface{} = interface{}("Senior Engineer")
+	patchBody.Operations[0].Value = (&value1)
+	var value2 interface{} = interface{}(map[string]string{"type": "work", "value": "updated_email@work.com"})
+	patchBody.Operations[1].Value = &value2
+
+	return patchBody
+}
