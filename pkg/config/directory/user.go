@@ -111,14 +111,18 @@ func (c *UserClient) GetUser(ctx context.Context, userName string) (*User, strin
 	return User, resp.HTTPResponse.Request.URL.String(), nil
 }
 
-func (c *UserClient) GetUsers(ctx context.Context, sort string, count string) (*UserListResponse, string, error) {
+func (c *UserClient) GetUsers(ctx context.Context, sortBy string, sortOrder string, count string) (*UserListResponse, string, error) {
 
 	vc := contextx.GetVerifyContext(ctx)
 	client := openapi.NewClientWithOptions(ctx, vc.Tenant, c.Client)
 
 	params := &openapi.GetUsersParams{}
-	if len(sort) > 0 {
-		params.SortBy = &sort
+	if len(sortBy) > 0 {
+		params.SortBy = &sortBy
+	}
+	if len(sortOrder) > 0 {
+		orderValue := openapi.GetUsersParamsSortOrder(sortOrder)
+		params.SortOrder = &orderValue
 	}
 	if len(count) > 0 {
 		params.Count = &count
