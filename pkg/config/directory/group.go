@@ -156,9 +156,13 @@ func (c *GroupClient) CreateGroup(ctx context.Context, group *Group) (string, er
 	if group.Members != nil {
 		for i, m := range *group.Members {
 			// Get the username from the member's Value field.
-			username := m.Value
+			username := m.UserName
 			// Retrieve the actual user ID using the provided function.
 			userID, err := userClient.GetUserId(ctx, username)
+			if m.Type == "" {
+				vc.Logger.Errorf("member type can't be empty")
+				return "", errorsx.G11NError("member type can't be empty")
+			}
 			if err != nil {
 				vc.Logger.Errorf("unable to get user ID for username %s; err=%s", username, err.Error())
 				return "", errorsx.G11NError("unable to get user ID for username %s; err=%s", username, err.Error())
