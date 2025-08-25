@@ -113,7 +113,7 @@ func (s *UserTestSuite) TestGetUser() {
 	require.NoError(s.T(), err, "unable to get user %s; err=%v", s.userName, err)
 
 	// Get user list
-	_, _, err = s.client.GetUsers(s.ctx, "", "")
+	_, _, err = s.client.GetUsers(s.ctx, "", "", "")
 	require.NoError(s.T(), err, "unable to list users; err=%v", err)
 
 	// Update user
