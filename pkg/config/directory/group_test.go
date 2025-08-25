@@ -92,7 +92,7 @@ func (s *GroupTestSuite) TestGetGroup() {
 	require.NoError(s.T(), err, "unable to get group %s; err=%v", s.groupName, err)
 
 	// Get group list
-	_, _, err = s.client.GetGroups(s.ctx, "", "")
+	_, _, err = s.client.GetGroups(s.ctx, "", "", "")
 	require.NoError(s.T(), err, "unable to list groups; err=%v", err)
 
 	// Update group

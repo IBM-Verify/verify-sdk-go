@@ -111,14 +111,18 @@ func (c *UserClient) GetUser(ctx context.Context, userName string) (*User, strin
 	return User, resp.HTTPResponse.Request.URL.String(), nil
 }
 
-func (c *UserClient) GetUsers(ctx context.Context, sort string, count string) (*UserListResponse, string, error) {
+func (c *UserClient) GetUsers(ctx context.Context, sortBy string, sortOrder string, count string) (*UserListResponse, string, error) {
 
 	vc := contextx.GetVerifyContext(ctx)
 	client := openapi.NewClientWithOptions(ctx, vc.Tenant, c.Client)
 
 	params := &openapi.GetUsersParams{}
-	if len(sort) > 0 {
-		params.SortBy = &sort
+	if len(sortBy) > 0 {
+		params.SortBy = &sortBy
+	}
+	if len(sortOrder) > 0 {
+		orderValue := openapi.GetUsersParamsSortOrder(sortOrder)
+		params.SortOrder = &orderValue
 	}
 	if len(count) > 0 {
 		params.Count = &count
@@ -279,4 +283,25 @@ func (c *UserClient) GetUserId(ctx context.Context, name string) (string, error)
 	}
 
 	return id, nil
+}
+
+func UserPatchExample() *openapi.PatchBody {
+	patchBody := &openapi.PatchBody{
+		Operations: []openapi.PatchOperation0{
+			{
+				Op:   openapi.PatchOperation0OpReplace,
+				Path: "title",
+			},
+			{
+				Op:   openapi.PatchOperation0OpAdd,
+				Path: "emails",
+			},
+		},
+	}
+	var value1 interface{} = interface{}("Senior Engineer")
+	patchBody.Operations[0].Value = (&value1)
+	var value2 interface{} = interface{}(map[string]string{"type": "work", "value": "updated_email@work.com"})
+	patchBody.Operations[1].Value = &value2
+
+	return patchBody
 }

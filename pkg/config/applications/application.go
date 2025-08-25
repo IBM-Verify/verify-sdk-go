@@ -283,7 +283,7 @@ type ProvisioningPolicies struct {
 
 type AdoptionPolicy struct {
 	MatchingAttributes []*AttributeMapping `json:"matchingAttributes" yaml:"matchingAttributes,omitempty"`
-	RemediationPolicy  map[string]string   `json:"remediationPolicy,omitempty" yaml:"remediationPolicy,omitempty"`
+	RemediationPolicy  map[string]any      `json:"remediationPolicy,omitempty" yaml:"remediationPolicy,omitempty"`
 }
 
 type Authentication struct {
@@ -574,7 +574,7 @@ func ApplicationExample(applicationType string) *Application {
 				DeProvAction: "suspend",
 				AdoptionPolicy: AdoptionPolicy{
 					MatchingAttributes: []*AttributeMapping{},
-					RemediationPolicy: map[string]string{
+					RemediationPolicy: map[string]any{
 						"policy": "NONE",
 					},
 				},
@@ -603,7 +603,7 @@ func ApplicationExample(applicationType string) *Application {
 					MatchingAttributes: []*AttributeMapping{
 						{TargetName: " ", SourceID: " "},
 					},
-					RemediationPolicy: map[string]string{
+					RemediationPolicy: map[string]any{
 						"policy": "NONE",
 					},
 				},
@@ -717,7 +717,7 @@ func ApplicationExample(applicationType string) *Application {
 				DeProvAction: "delete",
 				AdoptionPolicy: AdoptionPolicy{
 					MatchingAttributes: []*AttributeMapping{},
-					RemediationPolicy: map[string]string{
+					RemediationPolicy: map[string]any{
 						"policy": "NONE",
 					},
 				},

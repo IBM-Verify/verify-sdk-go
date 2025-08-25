@@ -101,14 +101,18 @@ func (c *GroupClient) GetGroupByID(ctx context.Context, id string) (*Group, stri
 	return Group, resp.HTTPResponse.Request.URL.String(), nil
 }
 
-func (c *GroupClient) GetGroups(ctx context.Context, sort string, count string) (*GroupListResponse, string, error) {
+func (c *GroupClient) GetGroups(ctx context.Context, sortBy string, sortOrder string, count string) (*GroupListResponse, string, error) {
 
 	vc := contextx.GetVerifyContext(ctx)
 	client := openapi.NewClientWithOptions(ctx, vc.Tenant, c.Client)
 
 	params := &openapi.GetGroupsParams{}
-	if len(sort) > 0 {
-		params.SortBy = &sort
+	if len(sortBy) > 0 {
+		params.SortBy = &sortBy
+	}
+	if len(sortOrder) > 0 {
+		orderValue := openapi.GetGroupsParamsSortOrder(sortOrder)
+		params.SortOrder = &orderValue
 	}
 	if len(count) > 0 {
 		params.Count = &count
@@ -149,18 +153,24 @@ func (c *GroupClient) CreateGroup(ctx context.Context, group *Group) (string, er
 	userClient := NewUserClient()
 	client := openapi.NewClientWithOptions(ctx, vc.Tenant, c.Client)
 
-	for i, m := range *group.Members {
-		// Get the username from the member's Value field.
-		username := m.Value
-		// Retrieve the actual user ID using the provided function.
-		userID, err := userClient.GetUserId(ctx, username)
-		if err != nil {
-			vc.Logger.Errorf("unable to get user ID for username %s; err=%s", username, err.Error())
-			return "", errorsx.G11NError("unable to get user ID for username %s; err=%s", username, err.Error())
-		}
+	if group.Members != nil {
+		for i, m := range *group.Members {
+			// Get the username from the member's Value field.
+			username := m.UserName
+			// Retrieve the actual user ID using the provided function.
+			userID, err := userClient.GetUserId(ctx, username)
+			if m.Type == "" {
+				vc.Logger.Errorf("member type can't be empty; it can be either user/group")
+				return "", errorsx.G11NError("member type can't be empty: it can be either user/group")
+			}
+			if err != nil {
+				vc.Logger.Errorf("unable to get user ID for username %s; err=%s", username, err.Error())
+				return "", errorsx.G11NError("unable to get user ID for username %s; err=%s", username, err.Error())
+			}
 
-		// Update the member's Value with the obtained user ID.
-		(*group.Members)[i].Value = userID
+			// Update the member's Value with the obtained user ID.
+			(*group.Members)[i].Value = userID
+		}
 	}
 
 	body, err := json.Marshal(group)
