@@ -160,8 +160,8 @@ func (c *GroupClient) CreateGroup(ctx context.Context, group *Group) (string, er
 			// Retrieve the actual user ID using the provided function.
 			userID, err := userClient.GetUserId(ctx, username)
 			if m.Type == "" {
-				vc.Logger.Errorf("member type can't be empty")
-				return "", errorsx.G11NError("member type can't be empty")
+				vc.Logger.Errorf("member type can't be empty; it can be either user/group")
+				return "", errorsx.G11NError("member type can't be empty: it can be either user/group")
 			}
 			if err != nil {
 				vc.Logger.Errorf("unable to get user ID for username %s; err=%s", username, err.Error())
