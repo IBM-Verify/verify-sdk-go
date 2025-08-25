@@ -153,18 +153,20 @@ func (c *GroupClient) CreateGroup(ctx context.Context, group *Group) (string, er
 	userClient := NewUserClient()
 	client := openapi.NewClientWithOptions(ctx, vc.Tenant, c.Client)
 
-	for i, m := range *group.Members {
-		// Get the username from the member's Value field.
-		username := m.Value
-		// Retrieve the actual user ID using the provided function.
-		userID, err := userClient.GetUserId(ctx, username)
-		if err != nil {
-			vc.Logger.Errorf("unable to get user ID for username %s; err=%s", username, err.Error())
-			return "", errorsx.G11NError("unable to get user ID for username %s; err=%s", username, err.Error())
-		}
+	if group.Members != nil {
+		for i, m := range *group.Members {
+			// Get the username from the member's Value field.
+			username := m.Value
+			// Retrieve the actual user ID using the provided function.
+			userID, err := userClient.GetUserId(ctx, username)
+			if err != nil {
+				vc.Logger.Errorf("unable to get user ID for username %s; err=%s", username, err.Error())
+				return "", errorsx.G11NError("unable to get user ID for username %s; err=%s", username, err.Error())
+			}
 
-		// Update the member's Value with the obtained user ID.
-		(*group.Members)[i].Value = userID
+			// Update the member's Value with the obtained user ID.
+			(*group.Members)[i].Value = userID
+		}
 	}
 
 	body, err := json.Marshal(group)
